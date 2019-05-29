@@ -1,0 +1,81 @@
+/**app.wxss**/
+
+
+.block-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  position: relative;
+}
+
+.block-header-body{
+  font-size: 35rpx;
+}
+
+.block-header-footer{
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  right: 15rpx;
+  padding: 5rpx;
+  color: #919191;
+  font-size: 25rpx;
+  border-radius: 5rpx;
+}
+
+.block-header-footer:active{
+  background-color: #e0e0e0;
+}
+
+.block-header-footer image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.sheet-block{
+  margin: 30rpx 0;
+}
+
+.sheet-item{
+  background-color: #f8f8f8;
+  margin: 10rpx 25rpx;
+  display: flex;
+}
+
+.sheet-item:active{
+  background-color: #fdfdfd;
+}
+
+.sheet-img{
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 10rpx;
+  background-color: #E6E6E6;
+}
+
+.sheet-info{
+  width: 430rpx;
+  margin-left: 20rpx;
+  padding: 30rpx 0;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.sheet-name{
+  display: inline-flex;
+  padding: 10rpx 0;
+  font-size: 30rpx;
+  align-items: center;
+}
+
+.sheet-name image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.sheet-songs{
+  font-size: 20rpx;
+  color: #8F8F8F;
+  padding: 10rpx 0;
+}

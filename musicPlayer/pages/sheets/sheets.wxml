@@ -1,0 +1,97 @@
+<!--pages/sheets/sheets.wxml-->
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>
+<view class='sheet-item'>
+  <image class='sheet-img'></image>
+  <view class='sheet-info'>
+    <view class='sheet-name'>
+      <text>酷狗飙升榜</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+    <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+    <text class='sheet-songs'>七妹 - 四块五</text>
+    <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+  </view>
+</view>

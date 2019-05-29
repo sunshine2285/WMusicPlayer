@@ -1,0 +1,4 @@
+<!--pages/play/play.wxml-->
+<view class='song-picture'>
+  <image src='{{song.pic}}'></image>
+</view>

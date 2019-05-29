@@ -1,0 +1,141 @@
+<!--pages/index/index.wxml-->
+<view class='search'>
+  <icon type='search' size='40rpx'></icon>
+  <input type='text' placeholder='请输入歌曲名' confirm-type='search'></input>
+</view>
+<view class='divider'></view>
+
+<!-- 推荐歌单 -->
+<view class='sheet-block'>
+  <view class='block-header'>
+    <text class='block-header-body'>推荐歌单</text>
+    <view class='block-header-footer' bindtap='bindMoreSheet'>
+      <text>更多</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+  </view>
+  <view class='sheet-item'>
+    <image class='sheet-img'></image>
+    <view class='sheet-info'>
+      <view class='sheet-name'>
+        <text>酷狗飙升榜</text>
+        <image src='../../img/icon/right.png'></image>
+      </view>
+      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+      <text class='sheet-songs'>七妹 - 四块五</text>
+      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+    </view>
+  </view>
+  <view class='sheet-item'>
+    <image class='sheet-img'></image>
+    <view class='sheet-info'>
+      <view class='sheet-name'>
+        <text>酷狗飙升榜</text>
+        <image src='../../img/icon/right.png'></image>
+      </view>
+      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+      <text class='sheet-songs'>七妹 - 四块五</text>
+      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+    </view>
+  </view>
+  <view class='sheet-item'>
+    <image class='sheet-img'></image>
+    <view class='sheet-info'>
+      <view class='sheet-name'>
+        <text>酷狗飙升榜</text>
+        <image src='../../img/icon/right.png'></image>
+      </view>
+      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
+      <text class='sheet-songs'>七妹 - 四块五</text>
+      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
+    </view>
+  </view>
+</view>
+
+<!-- 新歌首发 -->
+<view class='song-block'>
+
+  <view class='block-header'>
+    <text class='block-header-body'>新歌首发</text>
+    <view class='block-header-footer' bindtap='bindMoreSong'>
+      <text>更多</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+  </view>
+  <view class='song-body'>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+  </view>
+</view>
+
+<!-- 热门歌曲 -->
+<view class='song-block'>
+
+  <view class='block-header'>
+    <text class='block-header-body'>热门歌曲</text>
+    <view class='block-header-footer'>
+      <text>更多</text>
+      <image src='../../img/icon/right.png'></image>
+    </view>
+  </view>
+  <view class='song-body'>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+    <view class='song-body-item'>
+      <image src='' class='song-img'></image>
+      <text class='song-name'>name</text>
+      <text class='song-author'>author</text>
+    </view>
+  </view>
+</view>

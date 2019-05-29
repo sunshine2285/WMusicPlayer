@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/play/play",
+    "pages/sheet/sheet",
+    "pages/index/index",
+    "pages/sheets/sheets"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微音乐",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

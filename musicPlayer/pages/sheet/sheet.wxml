@@ -1,0 +1,34 @@
+<!--pages/sheet/sheet.wxml-->
+<view class='sheet-cover'>
+  <image src='../../img/sheet/01.png' mode='aspectFill'></image>
+  <text>2019-05-28 更新</text>
+</view>
+<view class='sheet-list'>
+  <view class='sheet-playTab'>
+    <view class='playall'>
+      <image class='play-btn' src='../../img/icon/play.png'></image>
+      <text class='playall-text'>全部播放</text>
+      <text class='songs-number'>{{songs.length}}</text>
+    </view>
+    <view class='playmode'>
+      <image src='../../img/icon/order.png'></image>
+      <text>顺序播放</text>
+    </view>
+  </view>
+
+  <block wx:for="{{songs}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+    <view class='song-item' data-item='{{item}}' bindtap='bindPlayAndSkip'>
+      <text>{{index + 1}}</text>
+      <view class='song-item-body'>
+        <view class='song-info'>
+          <text class='song-info-name'>{{item.name}}</text>
+          <text class='song-info-author'>{{item.singer}}</text>
+        </view>
+        <view class='song--btn'>
+          <image class='play-btn' src='../../img/icon/play.png'></image>
+          <image class='play-btn' src='../../img/icon/select.png'></image>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
