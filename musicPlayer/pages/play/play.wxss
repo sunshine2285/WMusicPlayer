@@ -1,18 +1,20 @@
 /* pages/play/play.wxss */
 
-.song-picture {
+.cover {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20rpx 0;
+  position: relative;
 }
 
-.song-picture image {
+.cover-picture{
   width: 450rpx;
   height: 450rpx;
   border-radius: 50%;
   box-shadow: 5rpx 5rpx 10rpx 10rpx #afafaf;
-  animation: circle 40s infinite linear;
+  animation: circle 35s infinite linear;
+  
 }
 
 @keyframes circle {
@@ -23,4 +25,21 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.cover-btn{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top:175rpx;
+  background-color: rgba(30, 30, 30, 0.4);
+}
+
+.cover-btn-img{
+  width: 60rpx;
+  height: 60rpx;
 }

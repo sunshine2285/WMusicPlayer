@@ -16,7 +16,6 @@ Page({
 
   bindPlayAndSkip: function(e){
     app.globalData.currentSong = e.currentTarget.dataset.item;
-    console.log(app.globalData.currentSong);
     wx.navigateTo({
       url: '../play/play',
     })
@@ -34,7 +33,6 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res.data.data);
         self.setData({
           songs: res.data.data
         })
