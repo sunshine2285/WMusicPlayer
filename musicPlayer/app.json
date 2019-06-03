@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/index/index",
     "pages/play/play",
     "pages/sheet/sheet",
@@ -12,5 +13,7 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  "requiredBackgroundModes": ["audio"]
+  "requiredBackgroundModes": [
+    "audio"
+  ]
 }
