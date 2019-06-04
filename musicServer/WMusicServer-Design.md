@@ -128,6 +128,12 @@
   | ---- | ------ | ------ | -------- | ------ | ---- |
   | uint | string | uint   | string   | string | uint |
 
+* songlist
+
+  | ID   | sheetID| songID |
+  | ---- | ------ | ------ |
+  | uint | uint | uint   |
+
 * User
 
   | ID   | name   | avatarUrl |
@@ -136,9 +142,9 @@
 
 * Comment
 
-  | ID   | userID | content | date   | thumbUp | thumbDown |
-  | ---- | ------ | ------- | ------ | ------- | --------- |
-  | uint | uint   | string  | string | uint    | uint      |
+  | ID   |songID| userID | content | date   | thumbUp | thumbDown |
+  | ---- |----| ------ | ------- | ------ | ------- | --------- |
+  | uint | uint| uint   | string  | string | uint    | uint      |
 
 ### dao
 
@@ -146,6 +152,7 @@
 
 * SongDao
 * SheetDao
+* songlistDao
 * UserDao
 * CommentDao
 

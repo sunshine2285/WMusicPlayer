@@ -35,6 +35,7 @@ public class TextServlet extends HttpServlet
 
             //将json数据发送给浏览器
             response.getWriter().write(jsonObject.toString());
+            response.getWriter().flush();
         } catch (JSONException e)
         {
             e.printStackTrace();

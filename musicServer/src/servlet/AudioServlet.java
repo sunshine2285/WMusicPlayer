@@ -20,7 +20,7 @@ public class AudioServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String audioName = "仓颉 - 樱海.mp3";
         ResourceBundle resource = ResourceBundle.getBundle("config/sourcePath");
-        String audioPath = resource.getString("musicBasePath") + '\\'+ audioName;
+        String audioPath = resource.getString("source.audioBasePath") + '\\'+ audioName;
 
         //输出audio流
         try{
