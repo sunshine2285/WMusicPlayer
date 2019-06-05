@@ -254,15 +254,15 @@
 
 * source.properties
   
-  > source.audioBasePath
-  source.sheetCoverBasePath
-  source.songCoverBasePath
+  > source.audioBasePath<br/>
+  source.sheetCoverBasePath<br/>
+  source.songCoverBasePath<br/>
   source.userAvatarBasePath
   
 * jdbc.properties
   	
-  >  jdbc.url=jdbc:mysql://localhost:3306/wmusic?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
-  jdbc.username=root
-  jdbc.password= ***
+  >  jdbc.url=jdbc:mysql://localhost:3306/wmusic?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC<br/>
+  jdbc.username=root<br/>
+  jdbc.password= *** <br/>
   jdbc.driver=com.mysql.cj.jdbc.Driver
 
