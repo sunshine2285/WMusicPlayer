@@ -1,5 +1,6 @@
 package util;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -13,7 +14,7 @@ public class HttpsRequestUtil {
 
 
     /*请求url获取返回的内容*/
-    public static String getReturn(HttpURLConnection connection) throws IOException {
+    private static String getReturn(HttpURLConnection connection) throws IOException {
         StringBuffer buffer = new StringBuffer();
         //将返回的输入流转换成字符串
         try (InputStream inputStream = connection.getInputStream();
@@ -26,6 +27,21 @@ public class HttpsRequestUtil {
             String result = buffer.toString();
             return result;
         }
+    }
+
+    public static String getReturnJSONData(String url, String method) {
+        String result = null;
+        try {
+            URL serverUrl = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
+            conn.setRequestMethod(method);
+            conn.setRequestProperty("Content-type", "application/json");
+            conn.connect();
+            result = getReturn(conn);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     public static void main(String[] args) throws Exception {

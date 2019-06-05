@@ -1,0 +1,4 @@
+<!--pages/user/user.wxml-->
+<view>
+  <button class='login-btn' bindgetuserinfo='bindLogin' open-type="getUserInfo">点击登录</button>
+</view>
