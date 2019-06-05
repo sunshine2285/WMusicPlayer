@@ -12,11 +12,11 @@
 
 ### 3. 前端设计
 
-* [WMusicPlayer前端设计](https://github.com/sunshine2285/WMusicPlayer/blob/master/WMusicPlayer%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1.md)
+* [WMusicPlayer前端设计](https://github.com/sunshine2285/WMusicPlayer/blob/master/WMusicPlayer前端设计.md)
 
 ### 4. 服务端设计
 
-* [WMusicPlayer服务端设计](https://github.com/sunshine2285/WMusicPlayer/blob/master/WMusicPlayer%E5%89%8D%E7%AB%AF%E8%AE%BE%E8%AE%A1.md.md)
+* [WMusicPlayer服务端设计](https://github.com/sunshine2285/WMusicPlayer/blob/master/WMusicPlayer服务端设计.md)
 
 ### 5. blog
 
