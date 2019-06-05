@@ -16,8 +16,15 @@ Page({
 
   bindPlayAndSkip: function(e){
     app.globalData.currentSong = e.currentTarget.dataset.item;
+    app.globalData.isPlay = true;
     wx.navigateTo({
-      url: '../play/play',
+      url: '../song/song',
+      success(res){
+
+      },
+      fail(res){
+        console.log(res);
+      }
     })
   },
 
@@ -51,7 +58,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log("sheet Show");
+    this.setData({
+      isPlay: app.globalData.isPlay
+    })
   },
 
   /**

@@ -45,8 +45,9 @@ public class HttpsRequestUtil {
     }
 
     public static void main(String[] args) throws Exception {
-//        String url = "https://api.weixin.qq.com/sns/jscode2session?appid=wxebb9af236307ae59&secret=02d11f05951e4b743f038f03e0e774a8&js_code=023nJKem0zEE7s1r5Xdm0HzEem0nJKez&grant_type=authorization_code";
-        String url = "http://localhost:8080/musicServer/text";
+        String url = "https://api.weixin.qq.com/sns/jscode2session?appid=wxebb9af236307ae59&secret=02d11f05951e4b743f038f03e0e774a8&js_code=033WFIsG0DHO1e2n5drG0t9VsG0WFIsr&grant_type=authorization_code";
+//        String url = "http://localhost:8080/musicServer/text";
+
         URL serverUrl = new URL(url);
         HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
         conn.setRequestMethod("GET");
@@ -57,6 +58,6 @@ public class HttpsRequestUtil {
         String result = getReturn(conn);
         JSONObject jsonObject = new JSONObject(result);
         System.out.println(jsonObject);
-//        System.out.println(jsonObject.get("course"));
+
     }
 }

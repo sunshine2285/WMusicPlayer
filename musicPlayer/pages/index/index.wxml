@@ -139,3 +139,16 @@
     </view>
   </view>
 </view>
+<view class='tabBar'>
+  <view class='tabBar-item' bindtap='bindToIndex'>
+    <image src="../../img/icon/source.png"></image>
+    <text>乐库</text>
+  </view>
+    <view class='tabBar-play' bindtap='bindToSong'>
+    <image src="../../img/icon/music.png" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
+  </view>
+    <view class='tabBar-item' bindtap='bindToUser'>
+    <image src="../../img/icon/user.png"></image>
+    <text>我的</text>
+  </view>
+</view>

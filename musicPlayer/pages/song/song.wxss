@@ -13,18 +13,7 @@
   height: 450rpx;
   border-radius: 50%;
   box-shadow: 5rpx 5rpx 10rpx 10rpx #afafaf;
-  animation: circle 35s infinite linear;
-  
-}
-
-@keyframes circle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+  animation: circle 35s infinite linear; 
 }
 
 .cover-btn{

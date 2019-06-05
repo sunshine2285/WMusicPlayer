@@ -10,22 +10,25 @@ Page({
     cover_btn_img: "",
     song: [],
     isPlay: true,
-    // audio: null,
   },
 
   bindCoverBtn: function(e) {
     var t_cover_btn_img;
-    if (this.data.isPlay) {
+    var isplay = this.data.isPlay;
+    if (isplay) {
       t_cover_btn_img = "../../img/icon/play-cover.png";
       bgPlayer.pause();
     } else {
       t_cover_btn_img = "../../img/icon/stop-cover.png";
       bgPlayer.play();
     }
+    
     this.setData({
-      isPlay: !this.data.isPlay,
+      isPlay: !isplay,
+      'app.globalData.isPlay': !isplay,
       cover_btn_img: t_cover_btn_img
     })
+    app.globalData.isPlay = !isplay;
   },
 
   /**
@@ -33,13 +36,13 @@ Page({
    */
   onLoad: function(options) {
     var t_cover_btn_img = "../../img/icon/stop-cover.png";
-    if (!app.globalData.IsPlay) {
+    if (!app.globalData.isPlay) {
       t_cover_btn_img = "../../img/icon/play-cover.png"
     }
 
     this.setData({
       song: app.globalData.currentSong,
-      isPlay: app.globalData.IsPlay,
+      isPlay: app.globalData.isPlay,
       cover_btn_img: t_cover_btn_img,
     })
   },
@@ -57,6 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    console.log("song show");
 
   },
 

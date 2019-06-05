@@ -30,20 +30,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public int selectByOpenid(String openid) throws SQLException {
-        String sql = "select id from user where openid = ?";
+    public User selectByOpenid(String openid) throws SQLException {
+        String sql = "select id, name ,avatarurl from user where openid = ?";
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
 
         pst.setString(1, openid);
 
         ResultSet resultSet = pst.executeQuery();
-        int result = 0;
+        User user = null;
         if (resultSet.next()) {
-            result = resultSet.getInt(1);
+            user = new User();
+            user.setid(resultSet.getInt(1));
+            user.setName(resultSet.getString(2));
+            user.setAvatarUrl(resultSet.getString(3));
         }
         DBUtil.close(resultSet, pst, conn);
-        return result;
+        return user;
     }
 
     @Override
@@ -64,8 +67,9 @@ public class UserDaoImpl implements UserDao {
     public static void main(String[] args) throws SQLException {
 
         UserDao userDao = new UserDaoImpl();
-        System.out.println(userDao.selectById(1));
-        System.out.println(userDao.selectById(2));
-        System.out.println(userDao.selectByOpenid("123123"));
+//        System.out.println(userDao.selectById(1));
+//        System.out.println(userDao.selectById(2));
+//        System.out.println(userDao.selectByOpenid("123123"));
+        System.out.println(userDao.selectByOpenid("1233"));
     }
 }

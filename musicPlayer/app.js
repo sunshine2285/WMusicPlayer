@@ -1,28 +1,50 @@
 //app.js
 App({
   onLaunch: function() {
-    wx.showLoading({
-      title: '载入中',
-    })
-    console.log("hello");
-    wx.login({
-      success(res) {
-        if (res.code) {
-          wx.request({
-            url: 'http://localhost:8080/musicServer/login',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-        }
-      }
-    })
+
+    // var that = this;
+    // wx.showLoading({
+    //   title: '载入中',
+    // })
+    // console.log("hello");
+    // wx.login({
+    //   success(res) {
+    //     if (res.code) {
+    //       wx.request({
+    //         url: 'http://localhost:8080/musicServer/login',
+    //         data: {
+    //           code: res.code
+    //         },
+    //         success(res){
+    //           wx.hideLoading();
+    //           if(res.data.userid != -1){
+    //             console.log("该用户尚已注册");
+                
+
+    //           }else {
+    //             console.log("该用户尚未注册");
+    //             that.globalData.userInfo = res.data;
+    //             console.log(that.globalData.userInfo);
+    //           }
+    //         }
+    //       })
+    //     }
+    //   },
+    //   fail(res){
+    //     console.log(res);
+    //     wx.hideLoading();
+    //     wx.showModal({
+    //       title: '提示',
+    //       content: '请检查您的网络连接',
+    //       showCancel: false,
+    //     })
+    //   }
+    // })
   },
   globalData: {
     userInfo: null,
-    IsPlay: true,
-    IsStopp: true,
+    isPlay: false,
+    IsStop: true,
     IsPause: false,
     currentSong:{
       "singer": "许嵩",
