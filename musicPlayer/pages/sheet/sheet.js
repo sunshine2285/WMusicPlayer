@@ -27,6 +27,22 @@ Page({
       }
     })
   },
+  bindToIndex(e) {
+    wx.redirectTo({
+      url: '../index/index',
+    })
+  },
+  bindToSong(e) {
+    app.globalData.isPlay = true;
+    wx.navigateTo({
+      url: '../song/song',
+    })
+  },
+  bindToUser(e) {
+    wx.redirectTo({
+      url: '../user/user',
+    })
+  },
 
   onLoad: function (options) {
     var self = this;

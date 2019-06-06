@@ -139,8 +139,10 @@
     </view>
   </view>
 </view>
+
+
 <view class='tabBar'>
-  <view class='tabBar-item' bindtap='bindToIndex'>
+  <view class='tabBar-item'>
     <image src="../../img/icon/source.png"></image>
     <text>乐库</text>
   </view>

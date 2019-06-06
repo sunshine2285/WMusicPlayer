@@ -1,16 +1,60 @@
 <!--pages/user/user.wxml-->
-<view>
-  <button class='login-btn' bindgetuserinfo='bindLogin' open-type="getUserInfo">点击登录</button>
+
+<block wx:if="{{isLogin}}">
+  <view class='userInfo-container' style='background: url({{userinfo.avatarUrl}});'>
+    <image class='userAvatar' src='{{userinfo.avatarUrl}}'>
+    </image>
+    <view class='userName'>
+      <text>{{userinfo.userName}}</text>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
+  <view class='userInfo-container'>
+    <image class='userAvatar' src='../../img/icon/music.png'>
+    </image>
+    <view class='userName'>
+      <button class='login-btn' bindgetuserinfo='bindLoginAndRegister' open-type="getUserInfo">点击登录</button>
+    </view>
+  </view>
+</block>
+
+
+<view class="movie-container">
+  <!-- 导航栏 -->
+  <view class="navbar">
+
+    <!-- 导航栏标题 -->
+    <block wx:for="{{navbarTitle}}" wx:key="index">
+      <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
+        <text>{{item}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!-- 导航栏内容 -->
+  <view class="movie-content-wrapper">
+    <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
+      <swiper-item wx:for="{{navbarTitle}}" wx:key="index">
+        <scroll-view scroll-y="{{true}}">
+          {{item}}
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
 </view>
+
+<!-- tabBar -->
 <view class='tabBar'>
   <view class='tabBar-item' bindtap='bindToIndex'>
     <image src="../../img/icon/source.png"></image>
     <text>乐库</text>
   </view>
-    <view class='tabBar-play' bindtap='bindToSong'>
+  <view class='tabBar-play' bindtap='bindToSong'>
     <image src="../../img/icon/music.png" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   </view>
-    <view class='tabBar-item' bindtap='bindToUser'>
+  <view class='tabBar-item'>
     <image src="../../img/icon/user.png"></image>
     <text>我的</text>
   </view>

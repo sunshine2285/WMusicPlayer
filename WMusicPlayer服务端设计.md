@@ -64,7 +64,7 @@
 
 * UserLoginServlet
 
-  * 作用：
+  * 作用：用户登录
 
     * 接受前端用户的code，调用微信服务端API通过code获取到用户的openid，
     * 通过openid判断是否存在用户信息，如果存在则返回
@@ -92,13 +92,17 @@
 
   * 作用：用户注册
 
-  * 请求参数：userName，password，email
+    * 接受前端用户的code，调用微信服务端API通过code获取到用户的openid
+    * 将用户的openid，userName，avatarUrl插入数据库
+    * 根据用户的openid查得新用户的usedid返回前端
+
+  * 请求参数：code（wx.login()获得），userName，avatarUrl
 
   * 返回值：JSON
 
-    | errMsg           |
-    | ---------------- |
-    | "ok" /  "failed" |
+    | userid                       |
+    | ---------------------------- |
+    | 返回用户注册成功之后的userid |
 
 * CommentSelectServlet
 

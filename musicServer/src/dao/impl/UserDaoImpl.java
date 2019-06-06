@@ -30,6 +30,23 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public int selectIdByOpenid(String openid) throws SQLException {
+        String sql = "select id from user where openid = ?";
+        Connection conn = DBUtil.getConnection();
+        PreparedStatement pst = conn.prepareStatement(sql);
+
+        pst.setString(1, openid);
+
+        ResultSet resultSet = pst.executeQuery();
+        int result = -1;
+        if (resultSet.next()) {
+           result = resultSet.getInt(1);
+        }
+        DBUtil.close(resultSet, pst, conn);
+        return result;
+    }
+
+    @Override
     public User selectByOpenid(String openid) throws SQLException {
         String sql = "select id, name ,avatarurl from user where openid = ?";
         Connection conn = DBUtil.getConnection();
