@@ -20,5 +20,5 @@
 
 ### 5. blog
 
-* [WMusic开发博客]()
+* [WMusic开发博客](https://blog.csdn.net/sunshine2285/column/info/39638)
 
