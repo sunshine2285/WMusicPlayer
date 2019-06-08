@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 public class ImportSongUtil {
     public static void main(String[] args)throws Exception {
-        String url = "https://v1.itooi.cn/tencent/songList?id=7012831061&page=0&format=1";
+        String url = "https://v1.itooi.cn/tencent/songList?id=1152785797&page=0&format=1";
         String returnData = HttpsRequestUtil.getReturnJSONData( url,"GET");
         JSONArray songlistData = new JSONArray(new JSONObject(returnData).get("data").toString());
 

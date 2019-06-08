@@ -1,12 +1,12 @@
 package model;
 
 public class Sheet {
-    public int id;
-    public String name;
-    public int userid;
-    public String coverUrl;
-    public String date;
-    public int hot;
+    private int id;
+    private String name;
+    private int userid;
+    private String coverUrl;
+    private String date;
+    private int hot;
 
     @Override
     public String toString() {

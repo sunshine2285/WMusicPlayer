@@ -49,7 +49,7 @@ public class SheetMapDaoImpl implements SheetMapDao {
 
     @Override
     public int insert(SheetMap sheetMap) throws SQLException {
-        if(selectBySheetIdAndSongId(sheetMap.sheetid, sheetMap.songid) == 1)
+        if(selectBySheetIdAndSongId(sheetMap.getSheetid(), sheetMap.getSongid()) == 1)
             return 0;
         String sql = "insert into sheetmap (sheetid, songid) values(?,?)";
         Connection conn = DBUtil.getConnection();

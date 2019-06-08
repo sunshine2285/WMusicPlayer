@@ -1,13 +1,13 @@
 package model;
 
 public class Comment {
-    public int id;
-    public int songid;
-    public int userid;
-    public String content;
-    public String date;
-    public int thumbUp;
-    public int thumbDown;
+    private int id;
+    private int songid;
+    private int userid;
+    private String content;
+    private String date;
+    private int thumbUp;
+    private int thumbDown;
 
     @Override
     public String toString() {

@@ -63,9 +63,13 @@
 
 .sheet-name {
   display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10rpx 0;
   font-size: 30rpx;
-  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sheet-name image {
@@ -77,11 +81,14 @@
   font-size: 20rpx;
   color: #8f8f8f;
   padding: 10rpx 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.placehoder{
+.placehoder {
   height: 120rpx;
-  width:100%;
+  width: 100%;
 }
 
 .tabBar {

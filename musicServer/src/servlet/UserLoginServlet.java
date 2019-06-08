@@ -39,8 +39,6 @@ public class UserLoginServlet extends HttpServlet {
             } else {
                 //用户未注册则返回用户的 userid=-1
                 userData.put("userid",-1);
-                userData.put("userName", "sunshine");
-                userData.put("avatarUrl", "12323");
             }
 
         } catch (Exception e) {

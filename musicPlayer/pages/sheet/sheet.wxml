@@ -1,7 +1,7 @@
 <!--pages/sheet/sheet.wxml-->
 <view class='sheet-cover'>
-  <image src='../../img/sheet/01.png' mode='aspectFill'></image>
-  <text>2019-05-28 更新</text>
+  <image src='{{sheetData.coverUrl}}' mode='aspectFill'></image>
+  <text>{{sheetData.date}} 更新</text>
 </view>
 <view class='sheet-list'>
   <view class='sheet-playTab'>

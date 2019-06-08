@@ -14,142 +14,54 @@
       <image src='../../img/icon/right.png'></image>
     </view>
   </view>
-  <view class='sheet-item'>
-    <image class='sheet-img'></image>
-    <view class='sheet-info'>
-      <view class='sheet-name'>
-        <text>酷狗飙升榜</text>
-        <image src='../../img/icon/right.png'></image>
+  <block wx:for="{{data.recommendSheetlist}}" wx:key="{{index}}">
+    <view class='sheet-item' data-index='{{index}}' bindtap='bindSheet'>
+      <image class='sheet-img' src='{{item.coverUrl}}'></image>
+      <view class='sheet-info'>
+        <view class='sheet-name'>
+          <text>{{item.name}}</text>
+          <image src='../../img/icon/right.png'></image>
+        </view>
+        <text class='sheet-songs'>{{item.topThreeSonglist[0]}}</text>
+        <text class='sheet-songs'>{{item.topThreeSonglist[1]}}</text>
+        <text class='sheet-songs'>{{item.topThreeSonglist[2]}}</text>
       </view>
-      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
-      <text class='sheet-songs'>七妹 - 四块五</text>
-      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
     </view>
-  </view>
-  <view class='sheet-item'>
-    <image class='sheet-img'></image>
-    <view class='sheet-info'>
-      <view class='sheet-name'>
-        <text>酷狗飙升榜</text>
-        <image src='../../img/icon/right.png'></image>
-      </view>
-      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
-      <text class='sheet-songs'>七妹 - 四块五</text>
-      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
-    </view>
-  </view>
-  <view class='sheet-item'>
-    <image class='sheet-img'></image>
-    <view class='sheet-info'>
-      <view class='sheet-name'>
-        <text>酷狗飙升榜</text>
-        <image src='../../img/icon/right.png'></image>
-      </view>
-      <text class='sheet-songs'>七妹 - 来自天堂的魔鬼</text>
-      <text class='sheet-songs'>七妹 - 四块五</text>
-      <text class='sheet-songs'>刘维 - 没离开【我的真朋友电视剧插曲】</text>
-    </view>
-  </view>
+  </block>
 </view>
 
-<!-- 新歌首发 -->
+<!-- 热门歌曲 -->
 <view class='song-block'>
-
   <view class='block-header'>
-    <text class='block-header-body'>新歌首发</text>
+    <text class='block-header-body'>热门歌曲</text>
     <view class='block-header-footer' bindtap='bindMoreSong'>
       <text>更多</text>
       <image src='../../img/icon/right.png'></image>
     </view>
   </view>
   <view class='song-body'>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
+    <block wx:for="{{data.hotSonglist}}" wx:key="{{index}}">
+      <view class='song-body-item'>
+        <image src='' class='song-img' src='{{item.coverUrl}}'></image>
+        <text class='song-name'>{{item.name}}</text>
+        <text class='song-author'>{{item.singer}}</text>
+      </view>
+    </block>
   </view>
 </view>
 
-<!-- 热门歌曲 -->
-<view class='song-block'>
+<view class='placehoder'></view>
 
-  <view class='block-header'>
-    <text class='block-header-body'>热门歌曲</text>
-    <view class='block-header-footer'>
-      <text>更多</text>
-      <image src='../../img/icon/right.png'></image>
-    </view>
-  </view>
-  <view class='song-body'>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-    <view class='song-body-item'>
-      <image src='' class='song-img'></image>
-      <text class='song-name'>name</text>
-      <text class='song-author'>author</text>
-    </view>
-  </view>
-</view>
-
-
+<!-- tabBar -->
 <view class='tabBar'>
   <view class='tabBar-item'>
     <image src="../../img/icon/source.png"></image>
     <text>乐库</text>
   </view>
-    <view class='tabBar-play' bindtap='bindToSong'>
+  <view class='tabBar-play' bindtap='bindToSong'>
     <image src="../../img/icon/music.png" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   </view>
-    <view class='tabBar-item' bindtap='bindToUser'>
+  <view class='tabBar-item' bindtap='bindToUser'>
     <image src="../../img/icon/user.png"></image>
     <text>我的</text>
   </view>

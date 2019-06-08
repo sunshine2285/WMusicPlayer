@@ -1,10 +1,10 @@
 package model;
 
 public class User {
-    public int id;
-    public String openid;
-    public String name;
-    public String avatarUrl;
+    private int id;
+    private String openid;
+    private String name;
+    private String avatarUrl;
 
     @Override
     public String toString() {

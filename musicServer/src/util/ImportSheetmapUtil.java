@@ -11,8 +11,8 @@ public class ImportSheetmapUtil {
         SheetMapDao sheetMapDao = new SheetMapDaoImpl();
         SheetMap sheetMap = new SheetMap();
 
-        for (int i = 44; i <= 63; ++i) {
-            sheetMap.setSheetid(3);
+        for (int i = 120; i <= 137; ++i) {
+            sheetMap.setSheetid(6);
             sheetMap.setSongid(i);
             System.out.println(sheetMapDao.insert(sheetMap));
         }

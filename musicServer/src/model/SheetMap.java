@@ -1,9 +1,9 @@
 package model;
 
 public class SheetMap {
-    public int id;
-    public int sheetid;
-    public int songid;
+    private int id;
+    private int sheetid;
+    private int songid;
 
     @Override
     public String toString() {

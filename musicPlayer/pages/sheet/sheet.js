@@ -20,7 +20,6 @@ Page({
     wx.navigateTo({
       url: '../song/song',
       success(res){
-
       },
       fail(res){
         console.log(res);
@@ -45,19 +44,37 @@ Page({
   },
 
   onLoad: function (options) {
+    this.setData({
+      sheetData: app.globalData.sheetData
+    })
+    
     var self = this;
     wx.request({
-      url: 'https://v1.itooi.cn/tencent/songList',
+      url: 'http://localhost:8080/musicServer/sheet',
       data:{
-        id:'2966721720',
-        format:'1'
+        id: this.data.sheetData.id,
       },
       header:{
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        self.setData({
-          songs: res.data.data
+        if(res.statusCode == 200){
+          self.setData({
+            songs: res.data.data
+          })
+        }else{
+          wx.showModal({
+            title: '服务器异常',
+            content: "错误代码 statuscode: " + res.statusCode,
+            showCancel: false,
+          })
+        }
+      },
+      fail(res){
+        wx.showModal({
+          title: '错误',
+          content: "无法连接服务器，请检查网络连接",
+          showCancel: false,
         })
       }
     })
