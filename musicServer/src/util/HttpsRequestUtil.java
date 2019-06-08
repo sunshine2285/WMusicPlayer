@@ -3,10 +3,7 @@ package util;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -17,16 +14,16 @@ public class HttpsRequestUtil {
     private static String getReturn(HttpURLConnection connection) throws IOException {
         StringBuffer buffer = new StringBuffer();
         //将返回的输入流转换成字符串
-        try (InputStream inputStream = connection.getInputStream();
-             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
-             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);) {
-            String str = null;
-            while ((str = bufferedReader.readLine()) != null) {
-                buffer.append(str);
-            }
-            String result = buffer.toString();
-            return result;
+
+        InputStream inputStream = connection.getInputStream();
+        InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        String str = null;
+        while ((str = bufferedReader.readLine()) != null) {
+            buffer.append(str);
         }
+        String result = buffer.toString();
+        return result;
     }
 
     public static String getReturnJSONData(String url, String method) {
@@ -42,6 +39,24 @@ public class HttpsRequestUtil {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public static int testExist(String url){
+        int result = -1;
+        try {
+            URL serverUrl = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
+            InputStream inputStream = conn.getInputStream();
+        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+            return -1;
+        }catch (IOException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        return 1;
     }
 
     public static void main(String[] args) throws Exception {

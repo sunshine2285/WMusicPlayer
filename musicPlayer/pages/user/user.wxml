@@ -52,7 +52,7 @@
     <text>乐库</text>
   </view>
   <view class='tabBar-play' bindtap='bindToSong'>
-    <image src="../../img/icon/music.png" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
+    <image src="{{coverUrl}}" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   </view>
   <view class='tabBar-item'>
     <image src="../../img/icon/user.png"></image>

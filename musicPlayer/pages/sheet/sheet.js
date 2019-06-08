@@ -18,12 +18,7 @@ Page({
     app.globalData.currentSong = e.currentTarget.dataset.item;
     app.globalData.isPlay = true;
     wx.navigateTo({
-      url: '../song/song',
-      success(res){
-      },
-      fail(res){
-        console.log(res);
-      }
+      url: '../song/song'
     })
   },
   bindToIndex(e) {
@@ -58,9 +53,10 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
+        console.log(res);
         if(res.statusCode == 200){
           self.setData({
-            songs: res.data.data
+            songs: res.data
           })
         }else{
           wx.showModal({
@@ -93,7 +89,8 @@ Page({
   onShow: function () {
     console.log("sheet Show");
     this.setData({
-      isPlay: app.globalData.isPlay
+      isPlay: app.globalData.isPlay,
+      coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl)
     })
   },
 

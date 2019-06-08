@@ -39,11 +39,11 @@ Page({
     var currentSheet = this.data.recommendSheetlist[e.currentTarget.dataset.index];
     console.log(currentSheet);
     var sheetData = {
-        "id": currentSheet.id,
-        "name": currentSheet.name,
-        "userid": currentSheet.userid,
-        "coverUrl": currentSheet.coverUrl,
-        "date": currentSheet.date
+      "id": currentSheet.id,
+      "name": currentSheet.name,
+      "userid": currentSheet.userid,
+      "coverUrl": currentSheet.coverUrl,
+      "date": currentSheet.date
     }
     app.globalData.sheetData = sheetData;
     wx.navigateTo({
@@ -142,16 +142,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.requestIndex(this);
-    // var that = this;
-    // console.log("index onload start")
-    // if (!app.globalData.hasLogin) {
-    //   this.login(that)
-    //   console.log('log')
-    // } else if(app.globalData.indexData == undefined){
-    //   this.requestIndex(that);
-    // }
-    // console.log("index onload end")
+    // this.requestIndex(this);
+    var self = this;
+    console.log("index onload start")
+    if (!app.globalData.hasLogin) {
+      this.login(self)
+      console.log('log')
+    } else if (app.globalData.indexData == undefined) {
+      this.requestIndex(self);
+    }
+
+    console.log("index onload end")
 
   },
 
@@ -166,7 +167,8 @@ Page({
   onShow: function() {
     console.log("index Show");
     this.setData({
-      isPlay: app.globalData.isPlay
+      isPlay: app.globalData.isPlay,
+      coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl)
     })
   },
 

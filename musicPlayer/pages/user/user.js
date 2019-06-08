@@ -151,6 +151,7 @@ Page({
     console.log("user Show");
     this.setData({
       isPlay: app.globalData.isPlay,
+      coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl),
       userinfo: app.globalData.userinfo
     })
   },

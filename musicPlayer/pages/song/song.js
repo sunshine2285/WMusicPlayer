@@ -52,8 +52,9 @@ Page({
    */
   onReady: function() {
     bgPlayer.title = this.data.song.name + " - " + this.data.song.singer;
-    bgPlayer.coverImgUrl = this.data.song.pic;
-    bgPlayer.src = this.data.song.url;
+    bgPlayer.coverImgUrl = this.data.song.coverUrl;
+    bgPlayer.src = this.data.song.audioUrl;
+    app.globalData.coverUrl = this.data.song.coverUrl;
   },
 
   /**

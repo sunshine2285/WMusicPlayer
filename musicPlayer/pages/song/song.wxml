@@ -1,6 +1,6 @@
 <!--pages/play/play.wxml-->
 <view class='cover'>
-  <image class='cover-picture' src='{{song.pic}}' style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
+  <image class='cover-picture' src='{{song.coverUrl}}' style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   <view class='cover-btn' bindtap='bindCoverBtn'>
     <image class='cover-btn-img' src='{{cover_btn_img}}'></image>
   </view>

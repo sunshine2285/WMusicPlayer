@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class SongDaoImpl implements SongDao {
     @Override
-    public Song SelectById(int id) throws SQLException {
+    public Song selectById(int id) throws SQLException {
         String sql = "select * from song where id = ?";
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
