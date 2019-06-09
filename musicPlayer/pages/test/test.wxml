@@ -1,4 +1,0 @@
-<!--pages/test/test.wxml-->
-<view class='container'>
-  <button class='play' bindtap='bindPlay'>播放</button>
-</view>

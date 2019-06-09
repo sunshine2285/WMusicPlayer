@@ -6,7 +6,7 @@
 <view class='sheet-list'>
   <view class='sheet-playTab'>
     <view class='playall'>
-      <image class='play-btn' src='../../img/icon/play.png'></image>
+      <image src='../../img/icon/playall.png'></image>
       <text class='playall-text'>全部播放</text>
       <text class='songs-number'>{{songs.length}}</text>
     </view>
@@ -17,7 +17,7 @@
   </view>
 
   <block wx:for="{{songs}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
-    <view class='song-item' data-item='{{item}}' bindtap='bindPlayAndSkip'>
+    <view class='song-item' data-index='{{index}}' bindtap='bindPlayAndSkip'>
       <text>{{index + 1}}</text>
       <view class='song-item-body'>
         <view class='song-info'>
@@ -25,8 +25,8 @@
           <text class='song-info-author'>{{item.singer}}</text>
         </view>
         <view class='song--btn'>
-          <image class='play-btn' src='../../img/icon/play.png'></image>
-          <image class='play-btn' src='../../img/icon/select.png'></image>
+          <image class='play-btn' src="{{(item.id == currentSongid) ? '../../img/icon/stop.png' : '../../img/icon/play.png'}}" data-index='{{index}}' catchtap='catchPlay'></image>
+          <image class='play-btn' src='../../img/icon/select.png' data-index='{{index}}' catchtap='catchMenu'></image>
         </view>
       </view>
     </view>

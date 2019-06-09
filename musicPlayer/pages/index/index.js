@@ -1,6 +1,5 @@
 // pages/index/index.js
 const app = getApp();
-const com = require(`../../utils/common.js`);
 
 Page({
 
@@ -23,6 +22,15 @@ Page({
   },
 
   bindToSong(e) {
+    if(app.globalData.currentSong == undefined){
+      wx.showToast({
+        icon: 'none',
+        title: '没有歌曲在播放',
+        mask: true,
+        duration: 1000
+      })
+      return;
+    }
     app.globalData.isPlay = true;
     wx.navigateTo({
       url: '../song/song',

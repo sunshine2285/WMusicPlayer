@@ -1,6 +1,7 @@
 // pages/play/play.js
-var app = getApp();
+const app = getApp();
 const bgPlayer = wx.getBackgroundAudioManager();
+
 Page({
 
   /**
@@ -22,10 +23,9 @@ Page({
       t_cover_btn_img = "../../img/icon/stop-cover.png";
       bgPlayer.play();
     }
-    
+
     this.setData({
       isPlay: !isplay,
-      'app.globalData.isPlay': !isplay,
       cover_btn_img: t_cover_btn_img
     })
     app.globalData.isPlay = !isplay;
@@ -50,19 +50,18 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-    bgPlayer.title = this.data.song.name + " - " + this.data.song.singer;
-    bgPlayer.coverImgUrl = this.data.song.coverUrl;
-    bgPlayer.src = this.data.song.audioUrl;
-    app.globalData.coverUrl = this.data.song.coverUrl;
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
     console.log("song show");
-
+    bgPlayer.title = this.data.song.name + " - " + this.data.song.singer;
+    bgPlayer.coverImgUrl = this.data.song.coverUrl;
+    bgPlayer.src = this.data.song.audioUrl;
+    app.globalData.coverUrl = this.data.song.coverUrl;
+    app.globalData.currentSongid = this.data.song.id;
   },
 
   /**
@@ -98,5 +97,35 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+})
+
+bgPlayer.onEnded(function() {
+  app.globalData.isPlay = false;
+})
+
+bgPlayer.onPlay(function() {
+  console.log("play");
+})
+
+bgPlayer.onCanplay(function() {
+  wx.request({
+    url: 'http://localhost:8080/musicServer/collect',
+    data: {
+      songid: app.globalData.currentSong.id,
+      userid: app.globalData.userinfo.userid,
+      kind: 0
+    },
+    success(res) {
+      if (res.statusCode == 200) {
+        if (res.data == 1) {
+          console.log("add ok")
+        } else if (res.data == 0) {
+          console.log("exist");
+        } else {
+          console.log("error");
+        }
+      }
+    }
+  })
 })

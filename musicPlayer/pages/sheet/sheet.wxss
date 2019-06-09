@@ -44,9 +44,15 @@
   align-items: center;
 }
 
-.play-btn {
+.playall image {
   width: 40rpx;
   height: 40rpx;
+}
+
+
+.play-btn {
+  width: 55rpx;
+  height: 55rpx;
 }
 
 .play-btn:active {

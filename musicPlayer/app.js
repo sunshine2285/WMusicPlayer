@@ -12,6 +12,7 @@ App({
       "avatarUrl": ""
     },
     currentSong: undefined,
+    currentSongid: -1,
     indexData: undefined,
     sheetData: undefined,
     coverUrl: undefined,

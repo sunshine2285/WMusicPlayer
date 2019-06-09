@@ -1,7 +1,7 @@
 <!--pages/user/user.wxml-->
 
 <block wx:if="{{isLogin}}">
-  <view class='userInfo-container' style='background: url({{userinfo.avatarUrl}});'>
+  <view class='userInfo-container' style='background: url({{userinfo.avatarUrl}});background-repeat: no-repeat;background-position: center center; background-size: 100% 500rpx'>
     <image class='userAvatar' src='{{userinfo.avatarUrl}}'>
     </image>
     <view class='userName'>

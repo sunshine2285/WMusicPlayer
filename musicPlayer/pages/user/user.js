@@ -13,7 +13,7 @@ Page({
     navbarActiveIndex: 0,
     navbarTitle: [
       "最近播放",
-      "我的歌单"
+      "我的收藏"
     ]
   },
 
@@ -118,6 +118,15 @@ Page({
     })
   },
   bindToSong(e) {
+    if (app.globalData.currentSong == undefined) {
+      wx.showToast({
+        icon: 'none',
+        title: '没有歌曲在播放',
+        mask: true,
+        duration: 1000
+      })
+      return;
+    }
     app.globalData.isPlay = true;
     wx.navigateTo({
       url: '../song/song',

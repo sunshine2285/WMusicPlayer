@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/user/user",
-    "pages/test/test",
     "pages/song/song",
     "pages/sheet/sheet",
     "pages/sheetlist/sheetlist",
