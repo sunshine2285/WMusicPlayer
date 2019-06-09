@@ -86,6 +86,63 @@
   text-overflow: ellipsis;
 }
 
+
+.song-block {
+  margin: 30rpx 10rpx;
+  padding: 0 5rpx;
+  border-radius: 10rpx;
+}
+
+.song-body {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.song-body-item {
+  display: inline-block;
+  width: 220rpx;
+  height: 325rpx;
+  margin: 10rpx;
+  padding: 10rpx 0;
+  background-color: #f8f8f8;
+  border-radius: 10rpx;
+}
+
+.song-body-item:active {
+  background-color: #fdfdfd;
+}
+
+.song-img {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #e6e6e6;
+  margin: 10rpx 10rpx;
+  border-radius: 10rpx;
+}
+
+.song-name {
+  display: block;
+  font-size: 30rpx;
+  width: 200rpx;
+  margin-left: 25rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.song-author {
+  display: block;
+  margin-left: 25rpx;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+  color: #8f8f8f;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
 .placehoder {
   height: 120rpx;
   width: 100%;

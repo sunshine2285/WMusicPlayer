@@ -1,7 +1,5 @@
 package util;
 
-import model.Song;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,27 +40,27 @@ public class UpdateCoverUrlUtil {
             songCover.setId(resultSet.getInt(1));
             songCover.setCoverUrl(resultSet.getString(2));
             /**
-             * 去除max_age
+             * 去除coverUrl后缀max_age
+             *      条件：songCover.getCoverUrl().endsWith("jp")
+             *  去除coverUrl-404
+             *      条件：HttpsRequestUtil.testExist(songCover.getCoverUrl()) == -1
              */
-//            if (songCover.getCoverUrl().endsWith("jp")){
-//                songCovers.add(songCover);
-//            }
 
-            if(HttpsRequestUtil.testExist(songCover.getCoverUrl()) == -1)
+            if (HttpsRequestUtil.testExist(songCover.getCoverUrl()) == -1) {
                 songCovers.add(songCover);
-
+            }
         }
         DBUtil.close(resultSet, pst, conn);
         return songCovers;
     }
+
 
     public static int update(SongCover songCover) throws Exception {
         String sql = "update song set coverUrl = ? where id = ? ";
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
 
-//        pst.setString(1, songCover.getCoverUrl().replace("jp","jpg"));
-        pst.setString(1, songCover.getCoverUrl() + 'g');
+        pst.setString(1, songCover.getCoverUrl().replace("?max_age……", ""));
         pst.setInt(2, songCover.getId());
 
         return pst.executeUpdate();
@@ -99,9 +97,9 @@ public class UpdateCoverUrlUtil {
         /**
          * 去除coverUrl无法显示的
          */
-        ArrayList<SongCover> songCovers = select();
-        for (SongCover songCover : songCovers) {
-            System.out.println(delete(songCover.getId()));
-        }
+//        ArrayList<SongCover> songCovers = select();
+//        for (SongCover songCover : songCovers) {
+//            System.out.println(delete(songCover.getId()));
+//        }
     }
 }

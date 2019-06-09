@@ -14,7 +14,7 @@
       <image src='../../img/icon/right.png'></image>
     </view>
   </view>
-  <block wx:for="{{data.recommendSheetlist}}" wx:key="{{index}}">
+  <block wx:for="{{recommendSheetlist}}" wx:key="{{index}}">
     <view class='sheet-item' data-index='{{index}}' bindtap='bindSheet'>
       <image class='sheet-img' src='{{item.coverUrl}}'></image>
       <view class='sheet-info'>
@@ -40,8 +40,8 @@
     </view>
   </view>
   <view class='song-body'>
-    <block wx:for="{{data.hotSonglist}}" wx:key="{{index}}">
-      <view class='song-body-item'>
+    <block wx:for="{{hotSonglist}}" wx:key="{{index}}">
+      <view class='song-body-item' data-index='{{index}}' bindtap='bindPlay'>
         <image src='' class='song-img' src='{{item.coverUrl}}'></image>
         <text class='song-name'>{{item.name}}</text>
         <text class='song-author'>{{item.singer}}</text>

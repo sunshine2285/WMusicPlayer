@@ -1,6 +1,5 @@
 package util;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -8,7 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpsRequestUtil {
-
 
     /*请求url获取返回的内容*/
     private static String getReturn(HttpURLConnection connection) throws IOException {
@@ -47,10 +45,10 @@ public class HttpsRequestUtil {
             URL serverUrl = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
             conn.setRequestMethod("GET");
+            conn.setInstanceFollowRedirects(false);
             conn.connect();
             InputStream inputStream = conn.getInputStream();
         } catch (FileNotFoundException e) {
-//            e.printStackTrace();
             return -1;
         }catch (IOException e) {
             e.printStackTrace();
@@ -61,14 +59,15 @@ public class HttpsRequestUtil {
 
     public static void main(String[] args) throws Exception {
         String url = "https://api.weixin.qq.com/sns/jscode2session?appid=wxebb9af236307ae59&secret=02d11f05951e4b743f038f03e0e774a8&js_code=033WFIsG0DHO1e2n5drG0t9VsG0WFIsr&grant_type=authorization_code";
-//        String url = "http://localhost:8080/musicServer/text";
 
         URL serverUrl = new URL(url);
         HttpURLConnection conn = (HttpURLConnection) serverUrl.openConnection();
         conn.setRequestMethod("GET");
         conn.setRequestProperty("Content-type", "application/json");
+
         //必须设置false，否则会自动redirect到重定向后的地址
-//        conn.setInstanceFollowRedirects(false);
+        conn.setInstanceFollowRedirects(false);
+
         conn.connect();
         String result = getReturn(conn);
         JSONObject jsonObject = new JSONObject(result);

@@ -1,4 +1,4 @@
-// pages/sheets/sheets.js
+// pages/songlist/songlist.js
 const app = getApp();
 Page({
 
@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+
   },
 
   bindToIndex(e) {
@@ -25,35 +26,31 @@ Page({
     })
   },
 
-  bindSheet(e) {
-    var currentSheet = this.data.sheetlist[e.currentTarget.dataset.index];
-    var sheetData = {
-      "id": currentSheet.id,
-      "name": currentSheet.name,
-      "userid": currentSheet.userid,
-      "coverUrl": currentSheet.coverUrl,
-      "date": currentSheet.date
-    }
-    app.globalData.sheetData = sheetData;
+  bindPlay(e) {
+    var currentSong = this.data.songlist[e.currentTarget.dataset.index];
+    console.log(currentSong);
+
+    app.globalData.currentSong = currentSong;
+    app.globalData.isPlay = true;
     wx.navigateTo({
-      url: '../sheet/sheet',
+      url: '../song/song',
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var self = this;
     wx.request({
-      url: 'http://localhost:8080/musicServer/sheetlist',
-      success(res){
-        if(res.statusCode == 200){
+      url: 'http://localhost:8080/musicServer/songlist',
+      success(res) {
+        if (res.statusCode == 200) {
           console.log(res);
           self.setData({
-            sheetlist: res.data
+            songlist: res.data
           })
-        }else{
+        } else {
           wx.showModal({
             title: '服务器异常',
             content: "status code:" + res.statusCode + "，请与管理员联系！",
@@ -61,7 +58,7 @@ Page({
           })
         }
       },
-      fail(res){
+      fail(res) {
         wx.showModal({
           title: '网络异常',
           content: '无法连接服务器，请检查网络连接',
@@ -74,14 +71,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.setData({
       isPlay: app.globalData.isPlay,
       coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl)
@@ -91,35 +88,35 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

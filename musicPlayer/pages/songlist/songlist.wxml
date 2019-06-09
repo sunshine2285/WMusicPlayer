@@ -1,0 +1,23 @@
+<!--pages/songlist/songlist.wxml-->
+<block wx:for="{{songlist}}" wx:key="{{index}}">
+  <view class='song-body-item' data-index='{{index}}' bindtap='bindPlay'>
+    <image src='' class='song-img' src='{{item.coverUrl}}'></image>
+    <text class='song-name'>{{item.name}}</text>
+    <text class='song-author'>{{item.singer}}</text>
+  </view>
+</block>
+
+<view class='placehoder'></view>
+<view class='tabBar'>
+  <view class='tabBar-item' bindtap='bindToIndex'>
+    <image src="../../img/icon/source.png"></image>
+    <text>乐库</text>
+  </view>
+  <view class='tabBar-play' bindtap='bindToSong'>
+    <image src="{{coverUrl}}" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
+  </view>
+  <view class='tabBar-item' bindtap='bindToUser'>
+    <image src="../../img/icon/user.png"></image>
+    <text>我的</text>
+  </view>
+</view>

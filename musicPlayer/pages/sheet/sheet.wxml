@@ -39,10 +39,10 @@
     <image src="../../img/icon/source.png"></image>
     <text>乐库</text>
   </view>
-    <view class='tabBar-play' bindtap='bindToSong'>
+  <view class='tabBar-play' bindtap='bindToSong'>
     <image src="{{coverUrl}}" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   </view>
-    <view class='tabBar-item' bindtap='bindToUser'>
+  <view class='tabBar-item' bindtap='bindToUser'>
     <image src="../../img/icon/user.png"></image>
     <text>我的</text>
   </view>

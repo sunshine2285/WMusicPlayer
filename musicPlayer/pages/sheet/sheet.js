@@ -14,16 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
 
-  bindPlayAndSkip: function(e){
+  bindPlayAndSkip(e){
     app.globalData.currentSong = e.currentTarget.dataset.item;
     app.globalData.isPlay = true;
     wx.navigateTo({
       url: '../song/song'
     })
   },
+
   bindToIndex(e) {
-    wx.redirectTo({
-      url: '../index/index',
+    wx.navigateBack({
+      delta: 2
     })
   },
   bindToSong(e) {
@@ -33,7 +34,7 @@ Page({
     })
   },
   bindToUser(e) {
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../user/user',
     })
   },
@@ -53,7 +54,6 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        console.log(res);
         if(res.statusCode == 200){
           self.setData({
             songs: res.data
@@ -61,16 +61,16 @@ Page({
         }else{
           wx.showModal({
             title: '服务器异常',
-            content: "错误代码 statuscode: " + res.statusCode,
-            showCancel: false,
+            content: "status code:" + res.statusCode + "，请与管理员联系！",
+            showCancel: false
           })
         }
       },
       fail(res){
         wx.showModal({
-          title: '错误',
-          content: "无法连接服务器，请检查网络连接",
-          showCancel: false,
+          title: '网络异常',
+          content: '无法连接服务器，请检查网络连接',
+          showCancel: false
         })
       }
     })

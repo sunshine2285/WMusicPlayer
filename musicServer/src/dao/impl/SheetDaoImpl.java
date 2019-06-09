@@ -39,6 +39,12 @@ public class SheetDaoImpl implements SheetDao {
         return sheet;
     }
 
+    /**
+     * 检索歌单信息，count=-1时检索所有，否则检索count个
+     * @param count
+     * @return
+     * @throws SQLException
+     */
     @Override
     public ArrayList<Sheetitem> selectSheetitem(int count) throws SQLException {
         String sql = "select * from sheet order by hot desc";

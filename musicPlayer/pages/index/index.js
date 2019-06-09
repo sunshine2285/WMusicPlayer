@@ -18,7 +18,7 @@ Page({
   },
   bindMoreSong: function(e) {
     wx.navigateTo({
-      url: '../sheet/sheet',
+      url: '../songlist/songlist',
     });
   },
 
@@ -34,10 +34,17 @@ Page({
     })
   },
 
+  bindPlay(e) {
+    var currentSong = this.data.hotSonglist[e.currentTarget.dataset.index];
+    app.globalData.currentSong = currentSong;
+    app.globalData.isPlay = true;
+    wx.navigateTo({
+      url: '../song/song',
+    })
+  },
+
   bindSheet(e) {
-    console.log(e.currentTarget.dataset.index);
     var currentSheet = this.data.recommendSheetlist[e.currentTarget.dataset.index];
-    console.log(currentSheet);
     var sheetData = {
       "id": currentSheet.id,
       "name": currentSheet.name,
@@ -56,25 +63,25 @@ Page({
       url: 'http://localhost:8080/musicServer/index',
       success(res) {
         if (res.statusCode == 200) {
-          console.log(res)
-          console.log(res.data)
+          console.log(res.data);
           that.setData({
-            data: res.data,
-            recommendSheetlist: res.data.recommendSheetlist
+            recommendSheetlist: res.data.recommendSheetlist,
+            hotSonglist: res.data.hotSonglist
           })
-          console.log(that.data.recommendSheetlist);
-          console.log(that.data.recommendSheetlist[0]);
-          console.log(that.data.recommendSheetlist[0].name);
         } else {
           wx.showModal({
-            title: '服务器故障',
+            title: '服务器异常',
             content: "status code:" + res.statusCode + "，请与管理员联系！",
             showCancel: false
           })
         }
       },
       fail(res) {
-        console.log("request index failed")
+        wx.showModal({
+          title: '网络异常',
+          content: '无法连接服务器，请检查网络连接',
+          showCancel: false
+        })
       }
     })
   },
@@ -95,33 +102,39 @@ Page({
             },
             success(res) {
               wx.hideLoading();
-              if (res.data.userid != -1) {
-                app.globalData.isLogin = true;
-                app.globalData.userinfo = res.data;
-                that.requestIndex(that);
+              if (res.statusCode == 200) {
+                if (res.data.userid != -1) {
+                  app.globalData.isLogin = true;
+                  app.globalData.userinfo = res.data;
+                  that.requestIndex(that);
+                } else {
+                  wx.showModal({
+                    title: '提示',
+                    content: '您是第一次使用微音乐，请先登录',
+                    showCancel: false,
+                    mask: true,
+                    success(res) {
+                      if (res.confirm) {
+                        wx.redirectTo({
+                          url: '../user/user',
+                        })
+                      }
+                    }
+                  })
+                }
               } else {
                 wx.showModal({
-                  title: '提示',
-                  content: '您是第一次使用微音乐，请先登录',
-                  showCancel: false,
-                  mask: true,
-                  success(res) {
-                    if (res.confirm) {
-                      wx.redirectTo({
-                        url: '../user/user',
-                      })
-                    } else if (res.cancel) {
-                      console.log('用户点击取消')
-                    }
-                  }
+                  title: '服务器异常',
+                  content: "status code:" + res.statusCode + "，请与管理员联系！",
+                  showCancel: false
                 })
               }
             },
             fail(res) {
               wx.hideLoading();
               wx.showModal({
-                title: '服务器连接失败',
-                content: '无法连接服务器，请与客服联系',
+                title: '网络异常',
+                content: '无法连接服务器，请检查网络连接',
                 showCancel: false
               })
             }
@@ -131,8 +144,8 @@ Page({
       fail(res) {
         wx.hideLoading();
         wx.showModal({
-          title: '调用失败',
-          content: 'wx.login()失败，请升级微信或者检查网络连接',
+          title: '调用异常',
+          content: 'wx.login() failed，请检查网络连接或升级微信到最新版本',
           showCancel: false
         })
       }
@@ -144,16 +157,13 @@ Page({
   onLoad: function(options) {
     // this.requestIndex(this);
     var self = this;
-    console.log("index onload start")
+    console.log("index onload")
     if (!app.globalData.hasLogin) {
       this.login(self)
-      console.log('log')
+      console.log('login')
     } else if (app.globalData.indexData == undefined) {
       this.requestIndex(self);
     }
-
-    console.log("index onload end")
-
   },
 
   /**
