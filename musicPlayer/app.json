@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/user/user",
     "pages/song/song",
+    "pages/user/user",
     "pages/sheet/sheet",
     "pages/sheetlist/sheetlist",
     "pages/songlist/songlist"

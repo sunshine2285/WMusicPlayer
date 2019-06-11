@@ -36,6 +36,7 @@ Page({
       url: '../song/song',
     })
   },
+
   bindToUser(e) {
     wx.redirectTo({
       url: '../user/user',
@@ -68,10 +69,9 @@ Page({
 
   requestIndex(that) {
     wx.request({
-      url: 'http://localhost:8080/musicServer/index',
+      url: app.globalData.host + '/index',
       success(res) {
         if (res.statusCode == 200) {
-          console.log(res.data);
           that.setData({
             recommendSheetlist: res.data.recommendSheetlist,
             hotSonglist: res.data.hotSonglist
@@ -82,14 +82,16 @@ Page({
             content: "status code:" + res.statusCode + "，请与管理员联系！",
             showCancel: false
           })
+          console.log("异常：" + res);
         }
       },
       fail(res) {
         wx.showModal({
-          title: '网络异常',
-          content: '无法连接服务器，请检查网络连接',
+          title: '连接异常',
+          content: '无法连接服务器，网络连接或服务器故障',
           showCancel: false
         })
+        console.log("异常：" + res);
       }
     })
   },
@@ -104,7 +106,7 @@ Page({
       success(res) {
         if (res.code) {
           wx.request({
-            url: 'http://localhost:8080/musicServer/login',
+            url: app.globalData.host + '/login',
             data: {
               code: res.code
             },
@@ -136,15 +138,17 @@ Page({
                   content: "status code:" + res.statusCode + "，请与管理员联系！",
                   showCancel: false
                 })
+                console.log("异常：" + res);
               }
             },
             fail(res) {
               wx.hideLoading();
               wx.showModal({
-                title: '网络异常',
-                content: '无法连接服务器，请检查网络连接',
+                title: '连接异常',
+                content: '无法连接服务器，网络连接或服务器故障',
                 showCancel: false
               })
+              console.log("异常：" + res);
             }
           })
         }
@@ -156,19 +160,18 @@ Page({
           content: 'wx.login() failed，请检查网络连接或升级微信到最新版本',
           showCancel: false
         })
+        console.log("异常：" + res);
       }
     })
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // this.requestIndex(this);
     var self = this;
-    console.log("index onload")
     if (!app.globalData.hasLogin) {
       this.login(self)
-      console.log('login')
     } else if (app.globalData.indexData == undefined) {
       this.requestIndex(self);
     }
@@ -183,7 +186,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log("index Show");
     this.setData({
       isPlay: app.globalData.isPlay,
       coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl)

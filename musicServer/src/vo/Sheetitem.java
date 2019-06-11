@@ -61,40 +61,4 @@ public class Sheetitem {
     public void setTopThreeSonglist(ArrayList<String> topThreeSonglist) {
         this.topThreeSonglist = topThreeSonglist;
     }
-
-    public String toJSONString(){
-        JSONObject sheetitemData = new JSONObject();
-        try {
-            sheetitemData.put("id", id);
-            sheetitemData.put("name", name);
-            sheetitemData.put("userid", userid);
-            sheetitemData.put("coverUrl", coverUrl);
-            sheetitemData.put("date", date);
-            sheetitemData.put("topThreeSonglist", topThreeSonglist);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return sheetitemData.toString();
-    }
-
-    public static void main(String[] args) {
-        Sheetitem sheetitem = new Sheetitem();
-        sheetitem.setId(1);
-        sheetitem.setName("sun");
-        sheetitem.setUserid(2285);
-        sheetitem.setCoverUrl("12313");
-        sheetitem.setDate("2012-02-03");
-        ArrayList<String> strings = new ArrayList<String>();
-        strings.add("a-b");
-        strings.add("a-c");
-        strings.add("a-d");
-        sheetitem.setTopThreeSonglist(strings);
-
-
-        JSONArray jsonArray = new JSONArray();
-        jsonArray.put(sheetitem.toJSONString());
-        jsonArray.put(sheetitem.toJSONString());
-        jsonArray.put(sheetitem.toJSONString());
-        System.out.println(jsonArray.toString());
-    }
 }

@@ -13,6 +13,20 @@ Page({
     isPlay: true,
   },
 
+  flushComment(self) {
+    wx.request({
+      url: app.globalData.host + '/comment',
+      data: {
+        songid: self.data.song.id
+      },
+      success(res) {
+        self.setData({
+          commentlist: res.data
+        })
+      }
+    })
+  },
+
   bindCoverBtn: function(e) {
     var t_cover_btn_img;
     var isplay = this.data.isPlay;
@@ -31,6 +45,64 @@ Page({
     app.globalData.isPlay = !isplay;
   },
 
+  bindInput(e) {
+    this.setData({
+      commentContent: e.detail.value
+    })
+  },
+
+  bindSubmit(e) {
+    var self = this;
+    if (self.data.commentContent == undefined){
+      wx.showToast({
+        title: '请先填写评论',
+        icon: 'none'
+      })
+      return;
+    } else if (self.data.commentContent.length == 0){
+      wx.showToast({
+        title: '请先填写评论',
+        icon: 'none'
+      })
+      return;
+    } else if (self.data.commentContent.length > 30) {
+      wx.showToast({
+        title: '写太多啦，30个字符就够啦',
+        icon: 'none'
+      })
+      return;
+    }
+    
+    wx.request({
+      url: app.globalData.host + '/insertComment',
+      data: {
+        songid: self.data.song.id,
+        userid: self.data.userinfo.userid,
+        content: self.data.commentContent
+      },
+      success(res) {
+        if (res.statusCode == 200) {
+          if (res.data == 1) {
+            self.setData({
+              commentContent: null
+            })
+            self.flushComment(self);
+            wx.showToast({
+              title: '评论成功'
+            })
+          }
+          else{
+            wx.showToast({
+              title: '评论失败',
+              icon: 'none'
+            })
+          }
+        }
+      }
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -44,19 +116,22 @@ Page({
       song: app.globalData.currentSong,
       isPlay: app.globalData.isPlay,
       cover_btn_img: t_cover_btn_img,
+      userinfo: app.globalData.userinfo
     })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function() {
+    var self = this;
+    self.flushComment(self);
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log("song show");
     bgPlayer.title = this.data.song.name + " - " + this.data.song.singer;
     bgPlayer.coverImgUrl = this.data.song.coverUrl;
     bgPlayer.src = this.data.song.audioUrl;
@@ -104,9 +179,7 @@ bgPlayer.onEnded(function() {
   app.globalData.isPlay = false;
 })
 
-bgPlayer.onPlay(function() {
-  console.log("play");
-})
+bgPlayer.onPlay(function() {})
 
 bgPlayer.onCanplay(function() {
   wx.request({
@@ -118,13 +191,11 @@ bgPlayer.onCanplay(function() {
     },
     success(res) {
       if (res.statusCode == 200) {
-        if (res.data == 1) {
-          console.log("add ok")
-        } else if (res.data == 0) {
-          console.log("exist");
-        } else {
-          console.log("error");
+        if (res.data != 1 && res.data != -1) {
+          console.log("异常：" + res);
         }
+      } else {
+        console.log("异常：" + res);
       }
     }
   })

@@ -3,6 +3,7 @@ App({
   onLaunch: function() {
   },
   globalData: {
+    host:"http://localhost:8080/musicServer",
     isPlay: false,
     isLogin: false,
     hasLogin: false,
@@ -16,6 +17,5 @@ App({
     indexData: undefined,
     sheetData: undefined,
     coverUrl: undefined,
-    nextSongs: []
   }
 })

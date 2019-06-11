@@ -55,10 +55,9 @@ Page({
   onLoad: function (options) {
     var self = this;
     wx.request({
-      url: 'http://localhost:8080/musicServer/sheetlist',
+      url: app.globalData.host + '/sheetlist',
       success(res){
         if(res.statusCode == 200){
-          console.log(res);
           self.setData({
             sheetlist: res.data
           })
@@ -68,14 +67,16 @@ Page({
             content: "status code:" + res.statusCode + "，请与管理员联系！",
             showCancel: false
           })
+          console.log("异常：" + res);
         }
       },
       fail(res){
         wx.showModal({
-          title: '网络异常',
-          content: '无法连接服务器，请检查网络连接',
+          title: '连接异常',
+          content: '无法连接服务器，网络连接或服务器故障',
           showCancel: false
         })
+        console.log("异常：" + res);
       }
     })
   },

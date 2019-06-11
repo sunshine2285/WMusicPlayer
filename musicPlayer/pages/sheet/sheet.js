@@ -30,7 +30,7 @@ Page({
       itemColor: "#2980b9",
       success(res) {
         wx.request({
-          url: 'http://localhost:8080/musicServer/collect',
+          url: app.globalData.host + '/collect',
           data: {
             songid: songid,
             userid: userid,
@@ -38,16 +38,16 @@ Page({
           },
           success(res) {
             if (res.statusCode == 200) {
-              if(res.data == 1){
+              if (res.data == 1) {
                 wx.showToast({
                   title: '收藏成功',
                 })
-              }else if(res.data == 0){
+              } else if (res.data == 0) {
                 wx.showToast({
                   title: '歌曲已在收藏列表中',
                   icon: 'none'
                 })
-              }else{
+              } else {
                 wx.showToast({
                   title: '收藏歌曲异常：' + res.data,
                   icon: 'none'
@@ -59,19 +59,21 @@ Page({
                 content: "status code:" + res.statusCode + "，请与管理员联系！",
                 showCancel: false
               })
+              console.log("异常：" + res);
             }
           },
           fail(res) {
             wx.showModal({
-              title: '网络异常',
-              content: '无法连接服务器，请检查网络连接',
+              title: '连接异常',
+              content: '无法连接服务器，网络连接或服务器故障',
               showCancel: false
             })
+            console.log("异常：" + res);
           }
         })
       },
       fail(res) {
-        console.log(res.errMsg)
+        console.log("异常：" + res);
       }
     })
   },
@@ -137,7 +139,7 @@ Page({
 
     var self = this;
     wx.request({
-      url: 'http://localhost:8080/musicServer/sheet',
+      url: app.globalData.host + '/sheet',
       data: {
         id: this.data.sheetData.id,
       },
@@ -155,6 +157,7 @@ Page({
             content: "status code:" + res.statusCode + "，请与管理员联系！",
             showCancel: false
           })
+          console.log("异常：" + res);
         }
       },
       fail(res) {
@@ -163,6 +166,7 @@ Page({
           content: '无法连接服务器，请检查网络连接',
           showCancel: false
         })
+        console.log("异常：" + res);
       }
     })
   },
@@ -178,7 +182,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log("sheet Show");
     this.setData({
       isPlay: app.globalData.isPlay,
       coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl),

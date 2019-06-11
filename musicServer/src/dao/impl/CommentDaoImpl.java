@@ -31,7 +31,6 @@ public class CommentDaoImpl implements CommentDao {
             comment.setContent(resultSet.getString(4));
             comment.setDate(resultSet.getString(5));
             comment.setThumbUp(resultSet.getInt(6));
-            comment.setThumbDown(resultSet.getInt(6));
             commentArrayList.add(comment);
         }
         DBUtil.close(resultSet, pst, conn);
@@ -40,7 +39,7 @@ public class CommentDaoImpl implements CommentDao {
 
     @Override
     public int insert(Comment comment) throws SQLException {
-        String sql = "insert into comment (songid, userid, content, date, thumbUp, thumbDown) values(?,?,?,?,?,?)";
+        String sql = "insert into comment (songid, userid, content, date, thumbUp) values(?,?,?,?,?)";
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
 
@@ -49,7 +48,6 @@ public class CommentDaoImpl implements CommentDao {
         pst.setString(3,comment.getContent());
         pst.setString(4,new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         pst.setInt(5,0);
-        pst.setInt(6,0);
 
         int result = pst.executeUpdate();
         DBUtil.close(null, pst, conn);
@@ -57,9 +55,8 @@ public class CommentDaoImpl implements CommentDao {
     }
 
     @Override
-    public int update(int id, int mode) throws SQLException {
-        String kind = (mode == 1) ? "thumbUp" : "thumbDown";
-        String sql = "update comment set " + kind + '=' + kind + "+1 where id = ?";
+    public int update(int id) throws SQLException {
+        String sql = "update comment set thumbUp = thumbUp + 1 where id = ?";
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
 

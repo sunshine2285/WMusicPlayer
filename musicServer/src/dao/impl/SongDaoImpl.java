@@ -2,6 +2,7 @@ package dao.impl;
 
 import dao.SongDao;
 import model.Song;
+import model.UserSongMap;
 import util.DBUtil;
 
 import java.sql.Connection;
@@ -57,14 +58,15 @@ public class SongDaoImpl implements SongDao {
 
     /**
      * 根据时间最新或者热度最高一词挑选出前 count 首歌曲
+     *
      * @param count
-     * @param mode （0-代表时间 / 非0-代表热度）
+     * @param mode  （0-代表时间 / 非0-代表热度）
      * @return ArrayList<Song>
      * @throws SQLException
      */
     @Override
     public ArrayList<Song> selectOrderSong(int count, int mode) throws SQLException {
-        String sql = "select * from song order by "+ (mode == 0 ? "date" : "hot" ) +" desc limit " + count;
+        String sql = "select * from song order by " + (mode == 0 ? "date" : "hot") + " desc limit " + count;
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
 
@@ -81,6 +83,17 @@ public class SongDaoImpl implements SongDao {
         }
         DBUtil.close(resultSet, pst, conn);
         return songArrayList;
+    }
+
+    @Override
+    public ArrayList<Song> selectUserSong(int userid, int kind) throws SQLException {
+        ArrayList<Integer> songidlist = new UserSongMapDaoImpl().selectByUserid(userid, kind);
+        ArrayList<Song> songlist = new ArrayList<Song>();
+
+        for (int songid : songidlist) {
+            songlist.add(selectById(songid));
+        }
+        return songlist;
     }
 
     @Override
@@ -115,7 +128,7 @@ public class SongDaoImpl implements SongDao {
 //        System.out.println(result);
 //        System.out.println(songDao.SelectById(1));
 //        System.out.println(songDao.selectByNameAndSinger("长大前", "K邵庄"));
-        System.out.println(songDao.selectOrderSong(6,0));
-
+//        System.out.println(songDao.selectOrderSong(6, 0));
+        System.out.println((new SongDaoImpl().selectUserSong(11, 0)));
     }
 }

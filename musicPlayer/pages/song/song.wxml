@@ -5,3 +5,36 @@
     <image class='cover-btn-img' src='{{cover_btn_img}}'></image>
   </view>
 </view>
+<view class='comment-item'>
+  <view class='comment-header'>
+    <image src='{{userinfo.avatarUrl}}'></image>
+    <text>{{userinfo.userName}}</text>
+  </view>
+  <view class='comment-body'>
+    <input type='textarea' placeholder='说点什么……' placeholder-class='input-holder' maxlength='30' confirm-type='done' auto-height='true' value='{{commentContent}}' bindinput='bindInput'></input>
+  </view>
+  <view class='comment-submit' hover-class='comment-submit-active' bindtap='bindSubmit'>
+    <image src='../../img/icon/submit.png'></image>
+    <text>发布</text>
+  </view>
+</view>
+<view class='headline'>精彩评论</view>
+<block wx:for="{{commentlist}}" wx:key="{{index}}">
+  <view class='comment-item'>
+    <view class='comment-header'>
+      <image src='{{item.avatarUrl}}'></image>
+      <text>{{item.username}}</text>
+    </view>
+    <view class='comment-body'>
+      <text>{{item.content}}
+      </text>
+    </view>
+    <view class='comment-footer'>
+      <text class='date'> {{item.date}} 发布 </text>
+      <image src='../../img/icon/thumbUp.png'></image>
+    </view>
+  </view>
+</block>
+<view wx:if="{{commentlist.length == 0}}" class='noCommentPlaceHoder'>
+  还没有人评论，快来抢占沙发吧！
+</view>

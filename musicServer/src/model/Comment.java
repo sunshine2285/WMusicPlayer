@@ -7,8 +7,19 @@ public class Comment {
     private String content;
     private String date;
     private int thumbUp;
-    private int thumbDown;
 
+    public Comment(){
+
+    }
+
+    public Comment(Comment comment) {
+        this.id = comment.getid();
+        this.songid = comment.getSongid();
+        this.userid = comment.getUserid();
+        this.content = comment.getContent();
+        this.date = comment.getDate();
+        this.thumbUp = comment.getThumbUp();
+    }
     @Override
     public String toString() {
         return "Comment{" +
@@ -18,7 +29,6 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", date='" + date + '\'' +
                 ", thumbUp=" + thumbUp +
-                ", thumbDown=" + thumbDown +
                 '}';
     }
 
@@ -68,14 +78,6 @@ public class Comment {
 
     public void setThumbUp(int thumbUp) {
         this.thumbUp = thumbUp;
-    }
-
-    public int getThumbDown() {
-        return thumbDown;
-    }
-
-    public void setThumbDown(int thumbDown) {
-        this.thumbDown = thumbDown;
     }
 }
 

@@ -9,6 +9,6 @@ public interface CommentDao {
     public ArrayList<Comment> selectBySongid(int songid) throws SQLException;
 
     public int insert(Comment comment) throws SQLException;
-    public int update(int id, int mode) throws SQLException;
+    public int update(int id) throws SQLException;
     public int delete(int id) throws SQLException;
 }

@@ -1,5 +1,6 @@
 // pages/user/user.js
 const app = getApp();
+const bgPlayer = wx.getBackgroundAudioManager();
 Page({
   /**
    * 页面的初始数据
@@ -12,11 +13,46 @@ Page({
     },
     navbarActiveIndex: 0,
     navbarTitle: [
-      "最近播放",
-      "我的收藏"
+      "最近",
+      "收藏"
     ]
   },
 
+  //刷新页面所有数据,that为页面本身
+  // var self = this;
+  flush(self) {
+    if (app.globalData.userinfo.userid == -1)
+      return;
+    wx.request({
+      url: app.globalData.host + '/user',
+      data: {
+        userid: app.globalData.userinfo.userid
+      },
+      success(res) {
+        if (res.statusCode == 200) {
+          self.setData({
+            recentSonglist: res.data.recentSonglist,
+            collectedSonglist: res.data.collectedSonglist
+          })
+        } else {
+          wx.showModal({
+            title: '服务器异常',
+            content: "status code:" + res.statusCode + "，请与管理员联系！",
+            showCancel: false
+          })
+        }
+      },
+      fail(res) {
+        wx.showModal({
+          title: '连接异常',
+          content: '无法连接服务器，网络连接或服务器故障',
+          showCancel: false
+        })
+      }
+    })
+  },
+
+  //导航切换
   onNavBarTap: function(event) {
     // 获取点击的navbar的index
     let navbarTapIndex = event.currentTarget.dataset.navbarIndex
@@ -25,6 +61,8 @@ Page({
       navbarActiveIndex: navbarTapIndex
     })
   },
+
+  //导航切换动画结束，激活当前navbar
   onBindAnimationFinish: function({
     detail
   }) {
@@ -35,12 +73,13 @@ Page({
   },
 
   /**
+   * 授权注册登录
    * 如果之前有授权，直接会获得用户信息
    * 如果没有授权会弹出授权窗口，要求授权
    * 授权成功，获得用户信息。未获得用户授权则userinfo为undefined
    */
   bindLoginAndRegister: function(res) {
-    var that = this;
+    var self = this;
     // 声明一个变量接收用户授权信息
     var userinfo = res.detail.userInfo;
     // 判断是否授权  true 替换微信用户头像
@@ -55,7 +94,7 @@ Page({
           success(res) {
             if (res.code) {
               wx.request({
-                url: 'http://localhost:8080/musicServer/register',
+                url: app.globalData.host + '/register',
                 data: {
                   code: res.code,
                   userName: userinfo.nickName,
@@ -63,8 +102,7 @@ Page({
                 },
                 success(res) {
                   //注册成功之后只需返回userid即可
-                  console.log(res);
-                  that.setData({
+                  self.setData({
                     'userinfo.userid': res.data.userid
                   })
                   app.globalData.userinfo.userid = res.userid;
@@ -72,13 +110,13 @@ Page({
                   wx.showToast({
                     title: '登录成功',
                   })
-                  that.setData({
+                  self.setData({
                     'userinfo.userName': userinfo.nickName,
                     'userinfo.avatarUrl': userinfo.avatarUrl,
                     isLogin: true
                   });
                   app.globalData.isLogin = true;
-                  app.globalData.userinfo = that.data.userinfo;
+                  app.globalData.userinfo = self.data.userinfo;
                 },
                 fail(res) {
                   wx.hideLoading();
@@ -112,11 +150,14 @@ Page({
 
   },
 
+  //跳转到主页
   bindToIndex(e) {
     wx.redirectTo({
       url: '../index/index',
     })
   },
+
+  //跳转到歌曲播放页面
   bindToSong(e) {
     if (app.globalData.currentSong == undefined) {
       wx.showToast({
@@ -132,18 +173,155 @@ Page({
       url: '../song/song',
     })
   },
-  bindToUser(e) {
-    wx.redirectTo({
-      url: '../user/user',
+
+  bindPlayAndSkip(e) {
+    var parrentindex = e.currentTarget.dataset.parrentindex;
+    var index = e.currentTarget.dataset.index;
+
+    app.globalData.currentSong = (parrentindex == 0) ? (this.data.recentSonglist[index]) : (this.data.collectedSonglist[index]);
+
+    app.globalData.isPlay = true;
+    wx.navigateTo({
+      url: '../song/song'
     })
   },
+
+  catchMenu(e) {
+    var self = this;
+    var parrentindex = e.currentTarget.dataset.parrentindex;
+    var index = e.currentTarget.dataset.index;
+    var currentSong = (parrentindex == 0) ? (this.data.recentSonglist[index]) : (this.data.collectedSonglist[index]);
+
+    var songid = currentSong.id;
+    var userid = app.globalData.userinfo.userid;
+    wx.showActionSheet({
+      itemList: ['收藏歌曲', '移除歌曲'],
+      itemColor: "#2980b9",
+      success(res) {
+        if (res.tapIndex == 0) {
+          wx.request({
+            url: app.globalData.host + '/collect',
+            data: {
+              songid: songid,
+              userid: userid,
+              kind: 1
+            },
+            success(res) {
+              if (res.statusCode == 200) {
+                if (res.data == 1) {
+                  self.flush(self);
+                  wx.showToast({
+                    title: '收藏成功',
+                  })
+                } else if (res.data == 0) {
+                  wx.showToast({
+                    title: '歌曲已在收藏列表中',
+                    icon: 'none'
+                  })
+                } else {
+                  wx.showToast({
+                    title: '收藏歌曲异常：' + res.data,
+                    icon: 'none'
+                  })
+                }
+              } else {
+                wx.showModal({
+                  title: '服务器异常',
+                  content: "status code:" + res.statusCode + "，请与管理员联系！",
+                  showCancel: false
+                })
+              }
+            },
+            fail(res) {
+              wx.showModal({
+                title: '连接异常',
+                content: '无法连接服务器，网络连接或服务器故障',
+                showCancel: false
+              })
+            }
+          })
+        } else if (res.tapIndex == 1) {
+          wx.request({
+            url: app.globalData.host + '/delete',
+            data: {
+              songid: songid,
+              userid: userid,
+              kind: self.data.navbarActiveIndex
+            },
+            success(res) {
+              if (res.statusCode == 200) {
+                if (res.data == 1) {
+                  self.flush(self);
+                  wx.showToast({
+                    title: '移除成功',
+                  })
+                } else {
+                  console.log("异常：" + res);
+                  wx.showToast({
+                    title: '移除歌曲异常：' + res.data,
+                    icon: 'none'
+                  })
+                }
+              } else {
+                console.log("异常：" + res);
+                wx.showModal({
+                  title: '服务器异常',
+                  content: "status code:" + res.statusCode + "，请与管理员联系！",
+                  showCancel: false
+                })
+              }
+            },
+            fail(res) {
+              wx.showModal({
+                title: '连接异常',
+                content: '无法连接服务器，网络连接或服务器故障',
+                showCancel: false
+              })
+            }
+          })
+        }
+      },
+      fail(res) {
+        console.log("异常：" + res);
+      }
+    })
+  },
+
+  catchPlay(e) {
+    var parrentindex = e.currentTarget.dataset.parrentindex;
+    var index = e.currentTarget.dataset.index;
+    var currentSong = (parrentindex == 0) ? (this.data.recentSonglist[index]) : (this.data.collectedSonglist[index]);
+
+    if (currentSong.id == this.data.currentSongid) {
+      this.setData({
+        currentSongid: -1
+      })
+      app.globalData.currentSongid = -1;
+      app.globalData.isPlay = false;
+      bgPlayer.pause();
+    } else {
+      app.globalData.currentSong = currentSong;
+      app.globalData.currentSongid = currentSong.id;
+      app.globalData.isPlay = true;
+      app.globalData.coverUrl = currentSong.coverUrl;
+
+      bgPlayer.title = currentSong.name + " - " + currentSong.singer;
+      bgPlayer.coverImgUrl = currentSong.coverUrl;
+      bgPlayer.src = currentSong.audioUrl;
+
+      this.setData({
+        isPlay: true,
+        coverUrl: currentSong.coverUrl,
+        currentSongid: currentSong.id
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.setData({
-      isLogin: app.globalData.isLogin
-    })
+
   },
 
   /**
@@ -157,12 +335,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log("user Show");
-    this.setData({
+    var self = this;
+    self.setData({
       isPlay: app.globalData.isPlay,
       coverUrl: ((app.globalData.coverUrl == undefined) ? '../../img/icon/music.png' : app.globalData.coverUrl),
-      userinfo: app.globalData.userinfo
+      userinfo: app.globalData.userinfo,
+      isLogin: app.globalData.isLogin,
+      currentSongid: (app.globalData.isPlay ? app.globalData.currentSongid : -1)
     })
+
+    self.flush(self);
   },
 
   /**

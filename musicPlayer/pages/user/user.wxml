@@ -1,5 +1,4 @@
 <!--pages/user/user.wxml-->
-
 <block wx:if="{{isLogin}}">
   <view class='userInfo-container' style='background: url({{userinfo.avatarUrl}});background-repeat: no-repeat;background-position: center center; background-size: 100% 500rpx'>
     <image class='userAvatar' src='{{userinfo.avatarUrl}}'>
@@ -26,7 +25,7 @@
   <view class="navbar">
 
     <!-- 导航栏标题 -->
-    <block wx:for="{{navbarTitle}}" wx:key="index">
+    <block wx:for="{{navbarTitle}}" wx:key="{{index}}">
       <view class="navbar-item {{navbarActiveIndex === index ? 'navbar-item-active' : ''}}" data-navbar-index="{{index}}" catchtap="onNavBarTap">
         <text>{{item}}</text>
       </view>
@@ -36,9 +35,24 @@
   <!-- 导航栏内容 -->
   <view class="movie-content-wrapper">
     <swiper current="{{navbarActiveIndex}}" bindanimationfinish="onBindAnimationFinish">
-      <swiper-item wx:for="{{navbarTitle}}" wx:key="index">
+      <swiper-item wx:for="{{navbarTitle}}" wx:key="{{index}}" wx:for-index='parrentindex'>
         <scroll-view scroll-y="{{true}}">
-          {{item}}
+          <block wx:for="{{(parrentindex == 0) ? recentSonglist : collectedSonglist}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+            <view class='song-item' data-index='{{index}}' data-parrentindex='{{parrentindex}}' bindtap='bindPlayAndSkip'>
+              <text>{{index + 1}}</text>
+              <view class='song-item-body'>
+                <view class='song-info'>
+                  <text class='song-info-name'>{{item.name}}</text>
+                  <text class='song-info-author'>{{item.singer}}</text>
+                </view>
+                <view class='song--btn'>
+                  <image class='play-btn' src="{{(item.id == currentSongid) ? '../../img/icon/stop.png' : '../../img/icon/play.png'}}" data-index='{{index}}' data-parrentindex='{{parrentindex}}' catchtap='catchPlay'></image>
+                  <image class='play-btn' src='../../img/icon/select.png' data-index='{{index}}' data-parrentindex='{{parrentindex}}' catchtap='catchMenu'></image>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class='placehoder'></view>
         </scroll-view>
       </swiper-item>
     </swiper>
@@ -54,6 +68,7 @@
   <view class='tabBar-play' bindtap='bindToSong'>
     <image src="{{coverUrl}}" style="animation-play-state: {{isPlay ? 'running' : 'paused'}}"></image>
   </view>
+
   <view class='tabBar-item'>
     <image src="../../img/icon/user.png"></image>
     <text>我的</text>

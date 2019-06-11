@@ -8,12 +8,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class UserSongMapDaoImpl implements UserSongMapDao {
     @Override
-    public ArrayList<UserSongMap> selectByUserid(int userid, int kind) throws SQLException {
-        String sql = "select songid from usersongmap where userid = ? and kind = ? ";
+    public ArrayList<Integer> selectByUserid(int userid, int kind) throws SQLException {
+        String sql = "select songid from usersongmap where userid = ? and kind = ? order by date desc";
 
         Connection conn = DBUtil.getConnection();
         PreparedStatement pst = conn.prepareStatement(sql);
@@ -21,15 +24,11 @@ public class UserSongMapDaoImpl implements UserSongMapDao {
         pst.setInt(2, kind);
 
         ResultSet resultSet = pst.executeQuery();
-        ArrayList<UserSongMap> userSongMaps = new ArrayList<UserSongMap>();
+        ArrayList<Integer> songidlist = new ArrayList<Integer>();
         while (resultSet.next()) {
-            UserSongMap userSongMap = new UserSongMap();
-            userSongMap.setUserid(userid);
-            userSongMap.setKind(kind);
-            userSongMap.setSongid(resultSet.getInt(1));
-            userSongMaps.add(userSongMap);
+            songidlist.add(resultSet.getInt(1));
         }
-        return userSongMaps;
+        return songidlist;
     }
 
     @Override
@@ -63,11 +62,35 @@ public class UserSongMapDaoImpl implements UserSongMapDao {
         return pst.executeUpdate();
     }
 
+    @Override
+    public int update(int id) throws SQLException {
+        String sql = "update usersongmap set date = ? where id = ?";
+        Connection conn = DBUtil.getConnection();
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+        pst.setInt(2, id);
+
+        return pst.executeUpdate();
+    }
+
+    @Override
+    public int delete(UserSongMap userSongMap) throws SQLException {
+        String sql = "delete from usersongmap where userid = ? and songid = ? and kind = ?";
+        Connection conn = DBUtil.getConnection();
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setInt(1, userSongMap.getUserid());
+        pst.setInt(2, userSongMap.getSongid());
+        pst.setInt(3, userSongMap.getKind());
+
+        return pst.executeUpdate();
+    }
+
     public static void main(String[] args) throws Exception {
         UserSongMap userSongMap = new UserSongMap();
-        userSongMap.setUserid(1);
-        userSongMap.setSongid(2);
+        userSongMap.setUserid(11);
+        userSongMap.setSongid(52);
         userSongMap.setKind(2);
-        System.out.println(new UserSongMapDaoImpl().insert(userSongMap));
+//        System.out.println(new UserSongMapDaoImpl().insert(userSongMap));
+        System.out.println(new UserSongMapDaoImpl().delete(userSongMap));
     }
 }

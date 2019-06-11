@@ -8,15 +8,15 @@
   position: relative;
 }
 
-.cover-picture{
+.cover-picture {
   width: 450rpx;
   height: 450rpx;
   border-radius: 50%;
   box-shadow: 5rpx 5rpx 10rpx 10rpx #afafaf;
-  animation: circle 35s infinite linear; 
+  animation: circle 35s infinite linear;
 }
 
-.cover-btn{
+.cover-btn {
   width: 100rpx;
   height: 100rpx;
   display: flex;
@@ -24,11 +24,110 @@
   align-items: center;
   border-radius: 50%;
   position: absolute;
-  top:175rpx;
+  top: 175rpx;
   background-color: rgba(30, 30, 30, 0.4);
 }
 
-.cover-btn-img{
+.cover-btn-img {
   width: 60rpx;
   height: 60rpx;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 30rpx 0 30rpx;
+}
+
+.comment-header image {
+  height: 80rpx;
+  width: 80rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  border: solid 4rpx #f5f5f5;
+}
+
+.comment-header text {
+  color: #446594;
+  font-size: 35rpx;
+}
+
+.comment-body {
+  font-size: 30rpx;
+  margin: 20rpx 50rpx 0 130rpx;
+  line-height: 45rpx;
+  text-align: justify;
+}
+
+.comment-body input {
+  padding: 20rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  text-align: justify;
+  background-color: #f5f5f5;
+}
+
+.comment-footer {
+  display: flex;
+  height: 80rpx;
+  margin: 0rpx 50rpx 0rpx 130rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 4rpx #f5f5f5;
+}
+
+.comment-footer text {
+  color: #888;
+  font-size: 25rpx;
+}
+
+.comment-footer image {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 10rpx;
+}
+
+.headline {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 35rpx;
+}
+
+.comment-submit {
+  width: 150rpx;
+  border-radius: 10rpx;
+  background-color: #f5f5f5;
+  align-self: flex-end;
+  font-size: 30rpx;
+  margin: 10rpx 50rpx 0 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.comment-submit-active {
+  background-color: #fafafa;
+}
+
+.comment-submit image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.noCommentPlaceHoder {
+  display: flex;
+  font-size: 30rpx;
+  color: #888;
+  height: 200rpx;
+  align-items: center;
+  justify-content: center;
 }
