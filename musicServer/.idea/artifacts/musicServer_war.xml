@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="musicServer:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/musicServer_war</output-path>
+    <root id="archive" name="musicServer_war.war">
+      <element id="artifact" artifact-name="musicServer:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="json" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

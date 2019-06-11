@@ -2,65 +2,17 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="musicServer:war exploded" />
+      <artifact name="musicServer:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b1d911-6f94-41fd-b7f8-0cb3e6bcf923" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/servlet/CommentInsertServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/CommentSelectServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/UserDeleteSongServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/UserPageServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vo/CommentItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vo/UserData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/img/icon/play - 副本.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/sheet/sheet.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/sheet/sheet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/sheet/sheet.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/sheet/sheet.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/sheetlist/sheetlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/sheetlist/sheetlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/song/song.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/song/song.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/song/song.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/song/song.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/song/song.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/song/song.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/songlist/songlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/songlist/songlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/user/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/user/user.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/user/user.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/user/user.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/user/user.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/musicServer_war.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/musicServer_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/musicServer_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/CommentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/CommentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/SongDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/SongDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/UserSongMapDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/UserSongMapDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/CommentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/CommentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/SongDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/SongDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/UserSongMapDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/dao/impl/UserSongMapDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/servlet/CollectSongServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/servlet/TextServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/servlet/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/vo/Sheetitem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/vo/Sheetitem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/CommentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/CommentDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/SongDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/SongDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/UserSongMapDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/UserSongMapDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/impl/CommentDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/impl/CommentDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/impl/SongDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/impl/SongDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/dao/impl/UserSongMapDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/dao/impl/UserSongMapDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/servlet/CollectSongServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/servlet/TextServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/servlet/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/vo/Sheetitem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicServer/vo/Sheetitem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CommentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CommentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/SongDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/SongDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/UserSongMapDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/UserSongMapDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/CommentDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/CommentDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/SongDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/SongDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/impl/UserSongMapDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/impl/UserSongMapDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/CollectSongServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/servlet/UserCollectSongServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/TextServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/servlet/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vo/Sheetitem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vo/Sheetitem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/util/JsonTestUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/musicServer/util/JsonTestUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -74,7 +26,38 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config/sourcePath.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="231" column="7" lean-forward="true" selection-start-line="230" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
+              <folding>
+                <element signature="e#17324#17330#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,8 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/config/sourcePath.properties" />
-        <option value="$PROJECT_DIR$/src/util/DBUtil.java" />
         <option value="$PROJECT_DIR$/src/config/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/servlet/AudioServlet.java" />
         <option value="$PROJECT_DIR$/src/servlet/TextServlet.java" />
@@ -155,6 +136,8 @@
         <option value="$PROJECT_DIR$/src/servlet/CommentSelectServlet.java" />
         <option value="$PROJECT_DIR$/src/dao/impl/CommentDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/servlet/CommentInsertServlet.java" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/index.html" />
       </list>
     </option>
   </component>
@@ -165,11 +148,11 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="298" />
+    <option name="y" value="-28" />
+    <option name="width" value="1505" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -190,7 +173,31 @@
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="musicServer_war" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicServer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -208,7 +215,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -412,15 +419,16 @@
       <workItem from="1560049220019" duration="11859000" />
       <workItem from="1560134831169" duration="14235000" />
       <workItem from="1560180502448" duration="4257000" />
-      <workItem from="1560235571470" duration="679000" />
+      <workItem from="1560235571470" duration="1269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102306000" />
+    <option name="totallyTimeSpent" value="102896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5614407" visible="true" weight="0.20107238" />
       <window_info id="Designer" order="1" />
@@ -460,13 +468,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/env/JDK/jdk_1.8.0_211/jre/lib/rt.jar!/java/lang/Override.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/json.jar!/org/json/JSONObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2982">
@@ -557,9 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,20 +759,6 @@
     <entry file="file://$PROJECT_DIR$/src/config/api.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/sourcePath.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/servlet/UserDeleteSongServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
@@ -942,16 +926,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/sourcePath.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="231" column="7" lean-forward="true" selection-start-line="230" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
+          <folding>
+            <element signature="e#17324#17330#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>musicServer:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
