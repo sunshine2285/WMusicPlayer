@@ -105,7 +105,7 @@ Page({
                   self.setData({
                     'userinfo.userid': res.data.userid
                   })
-                  app.globalData.userinfo.userid = res.userid;
+                  app.globalData.userinfo.userid = res.data.userid
                   wx.hideLoading();
                   wx.showToast({
                     title: '登录成功',

@@ -7,12 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54b1d911-6f94-41fd-b7f8-0cb3e6bcf923" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/musicServer_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/musicServer_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/musicServer_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../musicPlayer/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/song/song.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/song/song.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../musicPlayer/pages/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/pages/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../musicPlayer/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/../musicPlayer/project.config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/musicServer_war_exploded/WEB-INF/classes/util/JsonTestUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicServer/util/JsonTestUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -26,38 +25,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/config/sourcePath.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="231" column="7" lean-forward="true" selection-start-line="230" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
-              <folding>
-                <element signature="e#17324#17330#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -148,9 +116,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="298" />
-    <option name="y" value="-28" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="295" />
+    <option name="y" value="-30" />
     <option name="width" value="1505" />
     <option name="height" value="1040" />
   </component>
@@ -162,7 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -173,36 +140,37 @@
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="musicServer_war" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicServer" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -419,27 +387,29 @@
       <workItem from="1560049220019" duration="11859000" />
       <workItem from="1560134831169" duration="14235000" />
       <workItem from="1560180502448" duration="4257000" />
-      <workItem from="1560235571470" duration="1269000" />
+      <workItem from="1560235571470" duration="2510000" />
+      <workItem from="1560259554134" duration="1268000" />
+      <workItem from="1560392309772" duration="1540000" />
+      <workItem from="1562931948199" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102896000" />
+    <option name="totallyTimeSpent" value="106954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5614407" visible="true" weight="0.20107238" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.55807364" visible="true" weight="0.20911528" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Web" order="6" sideWeight="0.43855932" side_tool="true" visible="true" weight="0.20107238" />
+      <window_info id="Web" order="6" sideWeight="0.44192636" side_tool="true" visible="true" weight="0.20911528" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33144477" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33144477" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -468,57 +438,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/json.jar!/org/json/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2982">
-          <caret line="131" column="28" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/DBUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="71" column="47" lean-forward="true" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/TextServlet.java" />
-    <entry file="file://$PROJECT_DIR$/src/model/Sheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding>
-            <element signature="e#536#537#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
-            <element signature="e#954#955#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Song.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -554,13 +473,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/JsonTestUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/JsonTestUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/servlet/test.java" />
     <entry file="file://$PROJECT_DIR$/src/util/HttpsRequestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -865,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Comment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vo/CommentItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -926,10 +832,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        <state relative-caret-position="29">
+          <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
+          <folding>
+            <element signature="e#17324#17330#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -940,13 +849,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.html">
+    <entry file="file://$PROJECT_DIR$/src/config/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="231" column="7" lean-forward="true" selection-start-line="230" selection-start-column="7" selection-end-line="231" selection-end-column="7" />
-          <folding>
-            <element signature="e#17324#17330#1" expanded="true" />
-          </folding>
+          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/servlet">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>servlet</OriginalElement>
+          <nodes>
+            <node x="0.0" y="228.0">servlet.UserRegisterServlet</node>
+            <node x="233.0" y="380.0">servlet.IndexServlet</node>
+            <node x="0.0" y="152.0">servlet.CommentInsertServlet</node>
+            <node x="0.0" y="76.0">servlet.UserDeleteSongServlet</node>
+            <node x="242.0" y="304.0">servlet.SonglistServlet</node>
+            <node x="0.0" y="0.0">servlet.UserCollectSongServlet</node>
+            <node x="0.0" y="456.0">servlet.SheetServlet</node>
+            <node x="204.0" y="456.0">servlet.AudioServlet</node>
+            <node x="0.0" y="380.0">servlet.UserPageServlet</node>
+            <node x="271.0" y="228.0">servlet.UserLoginServlet</node>
+            <node x="0.0" y="304.0">servlet.SheetlistServlet</node>
+            <node x="281.0" y="152.0">servlet.CommentSelectServlet</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="62.0" y="158.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/model">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>model</OriginalElement>
+          <nodes>
+            <node x="156.0" y="152.0">model.Sheet</node>
+            <node x="0.0" y="228.0">model.User</node>
+            <node x="0.0" y="152.0">model.Comment</node>
+            <node x="0.0" y="0.0">model.UserSongMap</node>
+            <node x="127.0" y="228.0">model.Song</node>
+            <node x="0.0" y="76.0">model.SheetMap</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-73.0" y="44.0" />
+          <SelectedNodes>
+            <node>model.Sheet</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/dao">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>dao</OriginalElement>
+          <nodes>
+            <node x="571.0" y="0.0">dao.UserSongMapDao</node>
+            <node x="440.0" y="0.0">dao.UserDao</node>
+            <node x="0.0" y="0.0">dao.SheetMapDao</node>
+            <node x="169.0" y="0.0">dao.SheetDao</node>
+            <node x="358.49999999999994" y="91.0">dao.impl</node>
+            <node x="309.0" y="0.0">dao.SongDao</node>
+            <node x="769.0" y="0.0">dao.CommentDao</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="dao.impl" target="dao.SheetDao">
+              <point x="-35.75" y="-15.5" />
+              <point x="394.24999999999994" y="61.0" />
+              <point x="229.0" y="61.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="dao.impl" target="dao.UserDao">
+              <point x="11.916666666666686" y="-15.5" />
+              <point x="441.91666666666663" y="51.0" />
+              <point x="495.5" y="51.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="dao.impl" target="dao.SongDao">
+              <point x="-11.916666666666629" y="-15.5" />
+              <point x="418.0833333333333" y="51.0" />
+              <point x="364.5" y="51.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="dao.impl" target="dao.SheetMapDao">
+              <point x="-59.583333333333314" y="-15.5" />
+              <point x="370.41666666666663" y="71.0" />
+              <point x="74.5" y="71.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="dao.impl" target="dao.CommentDao">
+              <point x="59.58333333333337" y="-15.5" />
+              <point x="489.5833333333333" y="71.0" />
+              <point x="839.0" y="71.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="dao.impl" target="dao.UserSongMapDao">
+              <point x="35.75" y="-15.5" />
+              <point x="465.74999999999994" y="61.0" />
+              <point x="660.0" y="61.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9407965554359526" x="245.0" y="-29.0" />
+          <SelectedNodes>
+            <node>dao.CommentDao</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/util">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>util</OriginalElement>
+          <nodes>
+            <node x="0.0" y="228.0">util.ImportSongUtil</node>
+            <node x="223.0" y="228.0">util.SongCover</node>
+            <node x="0.0" y="0.0">util.ImportSheetmapUtil</node>
+            <node x="0.0" y="152.0">util.HttpsRequestUtil</node>
+            <node x="0.0" y="304.0">util.DBUtil</node>
+            <node x="0.0" y="76.0">util.UpdateCoverUrlUtil</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="-20.0" y="82.0" />
+          <SelectedNodes>
+            <node>util.ImportSongUtil</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/vo">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>vo</OriginalElement>
+          <nodes>
+            <node x="0.0" y="76.0">vo.IndexData</node>
+            <node x="0.0" y="0.0">vo.CommentItem</node>
+            <node x="175.0" y="152.0">vo.UserData</node>
+            <node x="0.0" y="152.0">vo.Sheetitem</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="148.0" y="92.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

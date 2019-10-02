@@ -183,7 +183,7 @@ bgPlayer.onPlay(function() {})
 
 bgPlayer.onCanplay(function() {
   wx.request({
-    url: 'http://localhost:8080/musicServer/collect',
+    url: app.globalData.host + '/collect',
     data: {
       songid: app.globalData.currentSong.id,
       userid: app.globalData.userinfo.userid,

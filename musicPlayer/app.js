@@ -3,7 +3,8 @@ App({
   onLaunch: function() {
   },
   globalData: {
-    host:"http://localhost:8080/musicServer",
+    // host:"http://localhost:8080/musicServer",
+    host:"https://sunshine-sun.cn:8443/musicServer",
     isPlay: false,
     isLogin: false,
     hasLogin: false,
